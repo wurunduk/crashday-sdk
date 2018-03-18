@@ -20,7 +20,7 @@ function OpenPage( head, title )
 	MenuStr += '  <td style="background-color:#e0e0e0" valign=top width=240 height=1><br>';
 
 	MenuStr += '  <b class="caption">1. Introduction</b><br><br>';
-	MenuStr += '  &nbsp;&nbsp;<a href="1_introduction.html">&gt; Welcome!</a><br>';
+	MenuStr += '  &nbsp;&nbsp;<a href="index.html">&gt; Welcome!</a><br>';
 
 	MenuStr += '  <br><b class="caption">2. Overview</b><br><br>';
 	MenuStr += '  &nbsp;&nbsp;<a href="2_overview_folders.html">&gt; Folders</a><br>';
