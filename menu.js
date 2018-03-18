@@ -94,7 +94,7 @@ function ClosePage()
 	MenuStr += '</tr>';
          MenuStr += '</table>';
          MenuStr += '</center>';
-         MenuStr += '<div style="text-align:center; font-size:11px; color:#444444; font-family:Verdana,Arial,Helvetica">&nbsp;<br>&copy; 2006 <a href="http://www.moonbytegames.com/" target="_blank">Moon Byte Studios</a>.<a href="https://discord.me/crashday" target="_blank">Our Discord</a>. Steam page: <a href="http://store.steampowered.com/app/508980/Crashday_Redline_Edition/" targer="_blank">Steam page.</a></div><br><br>';
+         MenuStr += '<div style="text-align:center; font-size:11px; color:#444444; font-family:Verdana,Arial,Helvetica">&nbsp;<br>&copy; 2006 <a href="http://www.moonbytegames.com/" target="_blank">Moon Byte Studios</a>. <a href="https://discord.me/crashday" target="_blank">Our Discord channel</a>. <a href="http://store.steampowered.com/app/508980/Crashday_Redline_Edition/" targer="_blank">Steam page.</a></div><br><br>';
 
          document.write( MenuStr );   // Dokument erstellen
 }
