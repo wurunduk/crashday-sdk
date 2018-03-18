@@ -1,0 +1,211 @@
+<html>
+
+<head>
+  <title>Crashday Software Development Kit - Documentation</title>
+  <link rel="StyleSheet" href="help.css" title="stylesheet" type="text/css">
+  <script language="JavaScript" src="menu.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<script language="JavaScript">
+  <!--
+      OpenPage( "5. Tools Reference", "MakeP3D (3D model tools)" );
+   //-->
+</script>
+
+
+<P  ><FONT COLOR="#333333"><FONT ><font>Location: [crashday]\tools\makep3d</FONT></FONT></FONT></P>
+<P  ><BR>
+</P>
+<P  ><SPAN ID="Rahmen27" DIR="LTR" >
+	<P STYLE="margin-top: 0.21cm; margin-bottom: 0.21cm"><IMG SRC="images/SDK_doc_FULL_html_51e1a8a7.jpg" NAME="Grafik45"  BORDER=0><BR CLEAR=LEFT><FONT COLOR="#333333"><FONT ><font><I>MakeP3D
+	prompt</I></FONT></FONT></FONT></P>
+</SPAN></p>
+<p><BR CLEAR=LEFT><FONT COLOR="#333333"><FONT ><font>MakeP3D
+is a command line based utility designed to convert any .3ds-file
+into Crashday's .p3d  format. Every .3ds-file you want to convert has
+to be located either in [crashday]\editor or
+[crashday]\trkdata\cars\[carfolder]. At first you have to type in the
+.3ds-file you like to be converted (with or without .3ds) and then
+the .p3d-file you want to be created. (with or without .p3d) If you
+want something to be converted from or into a carfolder, simply type
+[carfolder]/[filename].[extension] into the prompt line (e.g.
+judge/judgeMesh.3ds).</FONT></FONT></FONT>
+</P>
+<P  ><BR>
+</P>
+<P  ><FONT COLOR="#333333"><FONT ><font>If you do not want to use the prompt or make use of MakeP3D's advanced functionality, start the application with command line
+parameters:</FONT></FONT></FONT></P>
+	<TABLE WIDTH=509 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+		<COL WIDTH=161>
+		<COL WIDTH=338>
+		<TR>
+			<TD WIDTH=161 BGCOLOR="#e0e0e0">
+				<P ><FONT COLOR="#333333"><FONT ><font><I>-in
+				[filename].3ds</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=338 BGCOLOR="#ffffff">
+				<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>3DS file for import</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=161 BGCOLOR="#e0e0e0">
+				<P ><FONT COLOR="#333333"><FONT ><font><I>-out
+				[filename].p3d</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=338 BGCOLOR="#ffffff">
+				<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>P3D file for export</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=161 BGCOLOR="#e0e0e0">
+				<P ><FONT COLOR="#333333"><FONT ><font><I>-owrite</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=338 BGCOLOR="#ffffff">
+				<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>overwrite
+				without prompting if output file exists </FONT></FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=161 BGCOLOR="#e0e0e0">
+				<P ><FONT COLOR="#333333"><FONT ><font><I>-notex</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=338 BGCOLOR="#ffffff">
+				<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>replaces any textures by white color. If not turned on, be sure the required textures are available in the right directories and right file format.</FONT></FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=161 BGCOLOR="#e0e0e0">
+				<P ><FONT COLOR="#333333"><FONT ><font><I>-swap</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=338 BGCOLOR="#ffffff">
+				<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>swaps orientation of polygons </FONT></FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=161 BGCOLOR="#e0e0e0">
+				<P ><FONT COLOR="#333333"><FONT ><font><I>-ignoredupl</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=338 BGCOLOR="#ffffff">
+				<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>forces
+				the tool NOT to &quot;melt&quot; duplicated vertices (identical
+				position in space) into one. can be useful to maintain sharply
+				shaded edges, especially if a model is built without smoothing
+				group support. </FONT></FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=161 BGCOLOR="#e0e0e0">
+				<P ><FONT COLOR="#333333"><FONT ><font><I>-sgs</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=338 BGCOLOR="#ffffff">
+				<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>use if you are converting a model with use of smoothing groups.
+				Useful to maintain sharply shaded edges. When using this parameter,
+				there is mostly NO need for turning &quot;-ignoredupl&quot; on </FONT></FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=161 BGCOLOR="#e0e0e0">
+				<P ><FONT COLOR="#333333"><FONT ><font><I>-scaling
+				xx.xx</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=338 BGCOLOR="#ffffff">
+				<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>scaling
+				factor, &ldquo;1.0&rdquo; means no scaling </FONT></FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=161 BGCOLOR="#e0e0e0">
+				<P ><FONT COLOR="#333333"><FONT ><font><I>-liftbottombound
+				xx.xx</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=338 BGCOLOR="#ffffff">
+				<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>shifts
+				up the bottom plane of the bounding box of the main mesh by the number given in meters. This parameter is required to model meshes that go below
+				ground level (low vertices have to "leave" the bounding box on the bottom
+				end, as the bounding box bottom is a measure of placing a tile on the correct track height. Thus the bounding box bottom needs to be lifted)<BR><B>Always required when vertices in track piece's &ldquo;main&rdquo;
+				mesh lie below 0-height</B></FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=161 BGCOLOR="#e0e0e0">
+				<P ><FONT COLOR="#333333"><FONT ><font><I>-lowertopbound
+				xx.xx</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=338 BGCOLOR="#ffffff">
+				<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>shifts
+				down the top plane of the bounding box</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=161 BGCOLOR="#e0e0e0">
+				<P ><FONT COLOR="#333333"><FONT ><font><I>-mirrorx</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=338 BGCOLOR="#ffffff">
+				<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>mirrors
+				model in X axis</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=161 BGCOLOR="#e0e0e0">
+				<P ><FONT COLOR="#333333"><FONT ><font><I>-mirrory</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=338 BGCOLOR="#ffffff">
+				<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>mirrors
+				model in Y axis</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=161 BGCOLOR="#e0e0e0">
+				<P ><FONT COLOR="#333333"><FONT ><font><I>-mirrorz</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=338 BGCOLOR="#ffffff">
+				<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>mirrors
+				model in Z axis</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=161 BGCOLOR="#e0e0e0">
+				<P ><FONT COLOR="#333333"><FONT ><font><I>-flares</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=338 BGCOLOR="#ffffff">
+				<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>when models contain omni lights, flares will be applied to these lights in-game
+				</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+<br>
+<br>
+<P  ><img src="mark.gif" align=left><FONT COLOR="#333333"><FONT ><font><I>To
+export polys with &ldquo;self illuminated&rdquo; appearance, set
+ambient color for these polys to &ldquo;255 255 255&rdquo; in your
+modelling application.</I></FONT></FONT></FONT></P>
+<P  ><BR>
+</P>
+<P  ><IMG SRC="images/SDK_doc_FULL_html_1e41fcd.gif" NAME="Grafik46"  BORDER=0><BR>
+</P>
+<br>
+<P  ><img src="mark.gif" align=left><FONT COLOR="#333333"><FONT ><font><I>To make the exporting process more efficient you can create
+different batch (.bat) or link files for different purposes with
+different parameters, e.g. have a batch file that is only for car
+conversion ("makep3d.exe -sgs -flares")</I></FONT></FONT></FONT></P>
+
+
+<script language="JavaScript">
+  <!--
+      ClosePage();
+   //-->
+</script>
+
+
+</body>
+
+</html>

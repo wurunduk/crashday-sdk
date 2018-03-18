@@ -1,0 +1,108 @@
+<html>
+
+<head>
+  <title>Crashday Software Development Kit - Documentation</title>
+  <link rel="StyleSheet" href="help.css" title="stylesheet" type="text/css">
+  <script language="JavaScript" src="menu.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<script language="JavaScript">
+  <!--
+      OpenPage( "5. Tools Reference", "StuntEdit (track piece tools)" );
+   //-->
+</script>
+
+
+<P  ><FONT COLOR="#333333"><FONT ><font>Location: [crashday]\tools\stuntedit</FONT></FONT></FONT></P>
+<P  ><BR>
+</P>
+<P  ><SPAN ID="Rahmen32" DIR="LTR" >
+	<P STYLE="margin-top: 0.21cm; margin-bottom: 0.21cm"><IMG SRC="images/SDK_doc_FULL_html_m561bae9b.jpg" NAME="Grafik51"  BORDER=0><BR CLEAR=LEFT><FONT COLOR="#ff0000"><FONT ><font><I>
+	Interface of StuntEdit</I></FONT></FONT></FONT></P>
+</SPAN>
+</P>
+<P  ><BR>
+</P>
+<P  ><FONT COLOR="#333333"><FONT ><font>StuntEdit
+is a tool designed to assign stunt bonus definitions to each
+track piece. The stunt information for each tile is stored in a related .cst-file. </FONT></FONT></FONT>
+</P>
+<P  ><FONT COLOR="#333333"><FONT ><font>In
+Crashday you can either achieve stunt bonuses by general motion of the car (e.g.
+simple jumps, flips, spins, good landings etc.) or by passing predefined
+stunt boxes in a certain time. These boxes are what you set with StuntEdit for each track piece.</FONT></FONT></FONT></P>
+
+<P  ><FONT COLOR="#333333"><FONT ><font>Every
+track piece can have as many stunts as you like. Each stunt definition consists of two stunt boxes and a maximum
+time within the player has to reach the second stunt box after triggering
+the first one. It might sound unrealistic, but with this easy system it is possible to nearly "detect" any stunt action you like.<br>
+An example can be seen on the top image. When the player triggers the first (red) stunt box (i.e. he hits the
+jump), he needs to reach the second (blue) box in a certain time. Thus, the
+score reward defined by these two boxes is only given when hitting the
+ramp with a certain speed.</FONT></FONT></FONT></P>
+
+<P  ><img src="mark.gif" align=left><FONT COLOR="#333333"><FONT ><font><I>A stunt box is being triggered if the <b>center point</b> of a car passes the box, not a car's outline.</I></FONT></FONT></FONT></P>
+<P  ><BR>
+</P>
+
+<P ><FONT COLOR="#333333"><FONT ><font><B>How
+does StuntEdit work</B></FONT></FONT></FONT></P>
+<P  ><FONT COLOR="#333333"><FONT ><font>When
+starting StuntEdit, minijump.cfl is loaded by default. As you see,
+not the .cst-files are loaded but the .cfl-files. To load your own
+track piece you can either type its .cfl's name into the load dialog
+or, as you do with ShowCFL, open your .cfl-directly with StuntEdit.</FONT></FONT></FONT></P>
+<P  ><FONT COLOR="#333333"><FONT ><font>Hitting
+the button &ldquo;Add Stunt&rdquo; creates a new stunt definition
+with default values. You can drag the two stunt boxes with your
+mouse. Their dimensions are typed into the related text fields to the
+right. The
+first three text fields are &ldquo;Max time&rdquo; - time in seconds
+to reach the second stunt box, &ldquo;Score&rdquo; - bonus score
+granted when completing the stunt and &ldquo;Message&rdquo; - the
+bonus message displayed on screen when stunt is completed.</FONT></FONT></FONT></P>
+<P  ><FONT COLOR="#333333"><FONT ><font>In
+the lower right you see the &ldquo;Stunts list&rdquo;. If you have
+more than one stunt defined on your track piece, you can scroll
+through the stunts with this list (pressing the &ldquo;arrow
+keys&rdquo; or dragging with the mouse)</FONT></FONT></FONT></P>
+<P  ><BR>
+</P>
+<P ><FONT COLOR="#333333"><FONT ><font><B>Stunt
+IDs</B></FONT></FONT></FONT></P>
+<P  ><FONT COLOR="#333333"><FONT ><font>StuntEdit
+offers to assign every stunt definition a unique ID. If kept at &ldquo;(none)&rdquo; a random default ID will be generated in-game. By using unique IDs
+every single stunt definition is identified throughout the whole in-game level (just the same tiles share the same IDs). This offers some extended possibilities, especially between different track pieces:</FONT></FONT></FONT></P>
+<UL>
+	<UL>
+		<LI><P  ><FONT COLOR="#333333"><FONT ><font>You
+		can define a certain &ldquo;Previous Stunt&rdquo; for a stunt
+		definition. Only if this previous stunt was completed prior to the
+		current stunt, the bonus is granted. To do this, type the ID
+		of the stunt you want to be completed first into the &ldquo;Prev. Stunt&rdquo;
+		input field.</FONT></FONT></FONT></P>
+		<LI><P  ><FONT COLOR="#333333"><FONT ><font>Another assumption you can make is to only count a stunt if the previous stunt was NOT a certain action you specify.
+		To do this, just type &ldquo;![previous stunt]&rdquo; into
+		the &ldquo;Prev. Stunt&rdquo; input field (e.g. &ldquo;!hugeJump&rdquo;)</FONT></FONT></FONT></P>
+	</UL>
+</UL>
+<P  ><BR>
+</P>
+<P  ><img src="mark.gif" align=left><FONT COLOR="#333333"><FONT ><font><I>You
+can quit StuntEdit by pressing &ldquo;Alt+F4&rdquo;. Don't forget to
+save your stunt definitions before quitting.</I></FONT></FONT></FONT></P>
+
+
+<script language="JavaScript">
+  <!--
+      ClosePage();
+   //-->
+</script>
+
+
+</body>
+
+</html>

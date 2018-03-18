@@ -1,0 +1,233 @@
+<html>
+
+<head>
+  <title>Crashday Software Development Kit - Documentation</title>
+  <link rel="StyleSheet" href="help.css" title="stylesheet" type="text/css">
+  <script language="JavaScript" src="menu.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<script language="JavaScript">
+  <!--
+      OpenPage( "3. Creating cars", "Setup of shop and tuning parts (.lst)" );
+   //-->
+</script>
+
+
+<P  STYLE="font-weight: medium; text-decoration: none">
+<FONT COLOR="#333333"><FONT ><font><SPAN>The
+car's shop.lst is essential for vehicles, tuning parts and default
+wheels to appear in the game's shop and to be installed/uninstalled/exchanged in the garage screens. It
+defines names, prices and availability conditions of any in-game shop offer. For tuning kits, it defines to which car they belong and which tuning part defined in the .cca file they relate to.</SPAN></FONT></FONT></FONT></P>
+<P  STYLE="font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P  STYLE="text-decoration: none"><FONT COLOR="#333333"><FONT ><font><B><SPAN>Structure
+of the shop.lst file: </SPAN></B></FONT></FONT></FONT>
+</P>
+<P STYLE="font-weight: medium; text-decoration: none"><FONT COLOR="#333333"><FONT ><font>The
+file contains a variable number of shop parts. The number of total
+items in the file must not be specified, items are simply placed
+below each other and the item count is calculated
+automatically.<BR>Between items, a free line is maintained followed
+by the line <I>&quot;Next:&quot;</I>. </FONT></FONT></FONT>
+</P>
+<TABLE WIDTH=600 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=67*>
+	<COL WIDTH=189*>
+	<TR>
+		<td WIDTH=26% BGCOLOR="#e0e0e0">
+			<P><FONT COLOR="#333333"><FONT ><font><I><B>Example
+			file: shop.lst (corresponding to carinfo.cca example)</B></I></FONT></FONT></FONT></P>
+		</td>
+		<td WIDTH=74% BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><font><I><B>Explanation</B></I></FONT></FONT></FONT></P>
+		</td>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>Crashday-ShopDataList</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>first
+			static line</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>Next:</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>START
+			OF SHOP PART ITEM</FONT></FONT></P>
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>&quot;Next:&quot;
+			indicates next shop part item</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>*currentcar*</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>unique identifier
+			name (use the string &ldquo;*currentcar*&rdquo; if this offer is the car itself)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>car</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>group
+			that item belongs to, available are: <I>car, fbumper, rbumper,
+			sidekit, hood, rwing, wheels, performance, weapon, skin, cassis,
+			armour, crashpower</I></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>NONE</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>parent
+			object of a shop part.
+			Either this "parent" is a car in which case you specifcy "*currentcar*" (e.g. for any tuning item). Otherwise specify "NONE"</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>Apachee</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>part
+			name displayed in the shop</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>[contents of line meaningless]</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P ><FONT ><font><I>obsolete</I></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>withrespect
+			1370 </FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>availability
+			condition of the item. Either &ldquo;withrespect [number]&rdquo; (item unlocks with certain respect points), &ldquo;aftercarbought&rdquo; (item unlocks after parent car is purchased, use this for any tuning) or "always" (article is always unlocked)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P ><FONT ><font><I>obsolete</I></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>NONE</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P ><FONT ><font><I>obsolete</I></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>152000</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>price
+			of the item. MUST be &ldquo;0&rdquo; for stock car parts (see below for more details)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>NONE</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P ><FONT ><font><I>obsolete</I></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>0</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>set
+			this to &quot;1&quot; if your shop part is a stock tuning part of
+			a car (see below for more details)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>(blank line)</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>either start of next item with "Next:" or end of file</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P  STYLE="font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<p>
+<img src="mark.gif" align=left>
+<FONT COLOR="#333333"><FONT ><font><I><SPAN>Tuning
+parts listed in the shop.lst are linked to their physical
+representation in the carinfo.cca only by their name. Be sure
+the part identifier in the carinfo.cca matches its counterpart in the
+shop.lst.</SPAN></I></FONT></FONT></FONT></P>
+
+<img src="mark.gif" align=left>
+<P  STYLE="font-weight: medium; text-decoration: none">
+<FONT COLOR="#333333"><FONT ><font><I><SPAN>A
+stock car part is a shop item that is automatically purchased as the
+player purchases a car. Stock shop parts don't show up in the shop
+separately, i.e. the player doesn't even notice that they exist. It
+usually defines a stock element of a car, such as a default wheel or
+a default bumper that (physically) would have to be removed from the
+car to attach a tuned version. Most cars usually have at least one
+stock front bumper, one stock rear bumper and a default stock wheel.
+Stock parts guarantee that you can always switch a tuning category
+back to the state it was in when you bought the car. Please make sure stock items have a price of 0.</SPAN></I></FONT></FONT></FONT></P>
+
+
+<script language="JavaScript">
+  <!--
+      ClosePage();
+   //-->
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<html>
+
+<head>
+  <title>Crashday Software Development Kit - Documentation</title>
+  <link rel="StyleSheet" href="help.css" title="stylesheet" type="text/css">
+  <script language="JavaScript" src="menu.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<script language="JavaScript">
+  <!--
+      OpenPage( "6. Technical Reference", "Level Of Detail implementation" );
+   //-->
+</script>
+
+
+<p ><FONT COLOR="#333333"><FONT ><FONT  >Crashday
+offers up to four different &ldquo;level of detail&rdquo; steps which
+will be visible with different distances if the corresponding mesh is
+available. The collision detection is not influenced by any of these
+meshes. It is only calculated by the standard visible mesh.</FONT></FONT></FONT></P>
+<p ><FONT COLOR="#333333">&ldquo;<FONT ><FONT  >Level
+of detail&rdquo; meshes are identified by their names. Below is a
+list of LOD types you can provide:</FONT></FONT></FONT></P>
+
+		<TABLE WIDTH=560 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=125>
+			<COL WIDTH=425>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>[meshname].0</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >displayed
+					when closer than 36 meters. This .0 mesh is supported as an ultra detail-LOD. It is only visible when very close to the viewer and thus can have more detail than the base mesh</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>[meshname]</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >base
+					mesh, displayed whenever no &ldquo;level of detail&rdquo; is
+					displayed. This is the mesh you create sub meshes for. It is being used for collision detection as well.</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>[meshname].2</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >displayed
+					when distance more than 120 meters</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>[meshname].3</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >displayed
+					when distance more than 250 meters</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>[meshname].4</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >displayed
+					when distance more than 370 meters</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+<p ><BR>
+</P>
+<p ><FONT COLOR="#333333"><FONT ><FONT  >Meshes
+with bend capabilities (see <a href="4_tiles_modelingtexturing.html">Modeling and texturing guidelines</a>) can have &ldquo;level of detail&rdquo; meshes as well, but make sure the borders of any
+&ldquo;level of detail&rdquo; mesh are still subdivided every 5 meters.
+Otherwise ugly seams will appear in the distance.</FONT></FONT></FONT></P>
+<p ><BR>
+</P>
+<p ><SPAN ID="Rahmen35" DIR="LTR" >
+	<P STYLE="margin-top: 0.21cm"><IMG SRC="images/SDK_doc_reference_technical_html_12e75529.jpg" NAME="Grafik54" BORDER=0><BR CLEAR=LEFT><FONT COLOR="#333333"><FONT ><FONT ><I>"main"
+	mesh in brgloop.p3d</I></FONT></FONT></FONT></P>
+</SPAN><BR CLEAR=LEFT>
+<SPAN ID="Rahmen36" DIR="LTR" >
+	<P STYLE="margin-top: 0.21cm"><IMG SRC="images/SDK_doc_reference_technical_html_m664b5c86.jpg" NAME="Grafik55" BORDER=0><BR CLEAR=LEFT><FONT COLOR="#333333"><FONT ><FONT ><I>"main.3"
+	mesh in brgloop.p3d</I></FONT></FONT></FONT></P>
+</SPAN><BR CLEAR=LEFT>
+<SPAN ID="Rahmen37" DIR="LTR" >
+	<P STYLE="margin-top: 0.21cm"><IMG SRC="images/SDK_doc_reference_technical_html_49e67a52.jpg" NAME="Grafik56" BORDER=0><BR CLEAR=LEFT><FONT COLOR="#333333"><FONT ><FONT ><I>"main.4"
+	mesh in brgloop.p3d</I></FONT></FONT></FONT></P>
+</SPAN><BR CLEAR=LEFT><BR>
+</P>
+<p ><img src="mark.gif" align=left><FONT COLOR="#333333"><FONT ><FONT ><I>Neither does every mesh need one or more &ldquo;level of detail&rdquo; step(s),
+ nor does a mesh with sub LODs require all steps to be available. Please use &ldquo;level of
+detail&rdquo; meshes wisely at places where it makes sense, as more meshes per .p3d
+model file will also cost slightly more performance.</I></FONT></FONT></FONT></P>
+
+
+<script language="JavaScript">
+  <!--
+      ClosePage();
+   //-->
+</script>
+
+
+</body>
+
+</html>

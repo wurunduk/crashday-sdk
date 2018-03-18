@@ -1,0 +1,374 @@
+<html>
+
+<head>
+  <title>Crashday Software Development Kit - Documentation</title>
+  <link rel="StyleSheet" href="help.css" title="stylesheet" type="text/css">
+  <script language="JavaScript" src="menu.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<script language="JavaScript">
+  <!--
+      OpenPage( "4. Creating Track Pieces", "Setup of tile specification file (.cfl)" );
+   //-->
+</script>
+
+
+<P  ><FONT COLOR="#333333"><FONT ><font>Along with a tile's .p3d model file, the .cfl tile specification file is one of the most important
+elements of a track piece. Each tile in-game is solely detected by the existence of this file.<br><br>
+Being located in [crashday]\trkdata\tiles, it contains the reference to the 3d model used and various other parameters. The game does not
+require the .cfl file having the same filename as the .p3d file.
+However, in order to create clean and structured custom content, it
+is recommended to do so.</FONT></FONT></FONT></P>
+<P  ><FONT COLOR="#333333"><FONT ><font>Below
+is an overview of the .cfl parameters</FONT></FONT></FONT></P>
+<TABLE WIDTH=600 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=67*>
+	<COL WIDTH=189*>
+	<TR>
+		<td WIDTH=26% BGCOLOR="#e0e0e0">
+			<P><FONT COLOR="#333333"><FONT ><font><I><B>Example
+			file: streetb1.cfl (straight country road)</B></I></FONT></FONT></FONT></P>
+		</td>
+		<td WIDTH=74% BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><font><I><B>Explanation</B></I></FONT></FONT></FONT></P>
+		</td>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>Crashday-FieldObject-File</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>first
+			static line</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>-
+			<FONT COLOR="#666666"># tile name</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>track
+			piece name, this line is only used for custom track pieces that do
+			not have an own category in track editor</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>streetb1.p3d
+			<FONT COLOR="#666666"># Modelfile</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>the
+			link to the related .p3d 3d model file located in
+			[crashday]\editor</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>1
+			1 <FONT COLOR="#666666"># tile dimensions X / Z</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>width/height dimensions of the track piece
+			(1 1 -&gt; 20x20m; 2 2 -&gt; 40x40m; 1 2 -&gt;
+			20x40m; 2 1 -&gt; 40x20m)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>GROUND_FLAT</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>obsolete</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>1
+			<FONT COLOR="#666666"># Autolist in track editor</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>set
+			this value to &ldquo;1&rdquo; if you want it to be displayed in
+			track editor, otherwise set it to &ldquo;0&rdquo;</FONT></FONT></FONT></P>
+			<P ><FONT COLOR="#333333"><FONT ><font><I>NOTE: Setting
+			this to &ldquo;0&rdquo; can be useful if you have a track only
+			consisting of custom pieces, but you do not want the user to set
+			your track pieces separately (like the minigame skijump tiles)</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>mountcr.cfl</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>obsolete</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>1.0</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>obsolete</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>1
+			<FONT COLOR="#666666"># possible to recover? </FONT></FONT></FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>this
+			value is &ldquo;1&rdquo; if it is possible to recover on this
+			track piece, otherwise &ldquo;0&rdquo;</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0
+			<FONT COLOR="#666666"># Is tile a checkpoint?</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>defines
+			if this tile is a checkpoint or not (checkpoint &ldquo;1&rdquo;,
+			no checkpoint &ldquo;0&rdquo;)</FONT></FONT></FONT></P>
+			<P ><FONT COLOR="#333333"><FONT ><font><I>NOTE: Any tile can be checkpoint as long as it has tile dimensions of "1
+			1" (20x20m). In case of a checkpoint the next line defines the
+			extends of the checkpoint box. If this tile is no checkpoint next
+			line will be omitted</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>-7
+			7 7 -3 <FONT COLOR="#666666"># checkpoint extends</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>(only
+			present if checkpoint=1)</I></FONT></FONT></FONT></P>
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>upper
+			left and lower right corner of checkpoint box relative to the
+			&ldquo;main&rdquo; mesh's center in meters (-x +y x -y)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0
+			<FONT COLOR="#666666"># freely roam around?</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>is
+			it possible to freely roam across the whole tile without hitting
+			anything? (e.g. for planar tiles, heavily speeds up AI drivers)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>default
+			<FONT COLOR="#666666"># dynamic object dropping height</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>vertical height in meters relative to tile ground
+			at which dynamic objects (e.g. barrel, road sign) are "dropped" onto the tile. E.g. to put a dynamic object into a tunnel tile, drop it from a height like "-4", so it doesn't land on the ground above the tunnel).
+			"default" is a dropping height of around +100 meters</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>V1
+			STOP <FONT COLOR="#666666">#bend restrictions</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>defines axes without height smoothing points in the model to prevent bending along these. A space seperated list of any of these words "H1", "V1", "H2", "V2", ending with the word "STOP". See below for a detailed
+			explanation. Also look up <a href="4_tiles_modelingtexturing.html">Modeling and texturing guidelines</a> for further information.</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=26% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>-------------------
+			VEGETATION -------------------</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=74% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>START
+			OF VEGETATION SECTION, generated by a tool (see <a href="4_tiles_vegsetup.html">Vegetation setup</a>)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P  ><BR>
+</P>
+<P  ><BR>
+</P>
+<P ><FONT COLOR="#333333"><FONT ><FONT SIZE=3><B>Setting
+bend restrictions</B></FONT></FONT></FONT></P>
+<P  ><SPAN ID="Rahmen22" DIR="LTR" >
+	<P STYLE="margin-top: 0.21cm; margin-bottom: 0.21cm"><IMG SRC="images/SDK_doc_FULL_html_337d027e.jpg" NAME="Grafik31"  BORDER=0><BR CLEAR=LEFT><FONT COLOR="#333333"><FONT ><font><I>No
+	restrictions set, the tile will be bend very smooth, this is only
+	possible when tile is subdivided every 5m (see <a href="4_tiles_modelingtexturing.html">Modeling and texturing guidelines</a> modelling)</I></FONT></FONT></FONT></P>
+</SPAN></p>
+<p><BR CLEAR=LEFT><FONT COLOR="#333333"><FONT ><font>If
+a heightmap is applied to a Crashday track every track piece will be
+bent either more or less. With bend restrictions, defined in the
+.cfl-files, you change a tile's bend behaviour. See the images below:</FONT></FONT></FONT>
+</P>
+<P  ><SPAN ID="Rahmen23" DIR="LTR">
+	<P STYLE="margin-top: 0.21cm; margin-bottom: 0.21cm"><IMG SRC="images/SDK_doc_FULL_html_m73e258b3.jpg" NAME="Grafik32" BORDER=0><BR CLEAR=LEFT><FONT COLOR="#333333"><FONT ><font><I>Restrictions
+	in X/Z axis set, no bend possible, only the corner vertices are
+	moved (tile is skewed)</I></FONT></FONT></FONT></P>
+</SPAN></p>
+<p><FONT COLOR="#333333"><FONT ><font>As
+you see on these images the nice and smoothly look (left image) might
+not be wanted on every tile like for example houses (right image).</FONT></FONT></FONT>
+</P>
+<P  ><FONT COLOR="#333333"><FONT ><font>To
+have influence on this Crashday offers the bend restriction
+parameter. The following list shows some examples of possible values:</FONT></FONT></FONT></P>
+<P  ><BR>
+</P>
+<P  ><img src="mark.gif" align=left><FONT COLOR="#333333"><FONT ><font><I>The
+orange line means, no bend in this marked axis!</I></FONT></FONT></FONT></P>
+<P  ><BR>
+</P>
+<TABLE WIDTH=623 BORDER=1 BORDERCOLOR="#e7e7e7" CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=88>
+	<COL WIDTH=88>
+	<COL WIDTH=89>
+	<COL WIDTH=153>
+	<COL WIDTH=152>
+
+		<TR VALIGN=TOP>
+			<TD WIDTH=88 HEIGHT=97>
+				<P  STYLE="font-style: normal; font-weight: medium"><IMG SRC="images/SDK_doc_FULL_html_19f99e63.jpg" NAME="Grafik33"  BORDER=0><BR>
+				</P>
+			</TD>
+			<TD WIDTH=88>
+				<P  ><IMG SRC="images/SDK_doc_FULL_html_m4ae01c83.jpg" NAME="Grafik34"  BORDER=0><BR>
+				</P>
+			</TD>
+			<TD WIDTH=89>
+				<P  ><IMG SRC="images/SDK_doc_FULL_html_m5cbfe46f.jpg" NAME="Grafik35"  BORDER=0><BR>
+				</P>
+			</TD>
+			<TD WIDTH=153>
+				<P  ><IMG SRC="images/SDK_doc_FULL_html_m60f8d606.jpg" NAME="Grafik36"  BORDER=0><BR>
+				</P>
+			</TD>
+			<TD WIDTH=152>
+				<P  ><IMG SRC="images/SDK_doc_FULL_html_694e60b5.jpg" NAME="Grafik37"  BORDER=0><BR>
+				</P>
+			</TD>
+		</TR>
+
+
+		<TR VALIGN=TOP>
+			<TD WIDTH=88 HEIGHT=64 BGCOLOR="#e0e0e0">
+				<P  ><FONT COLOR="#333333"><FONT ><font><I>no
+				restrictions, bend all axes</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=88 BGCOLOR="#e0e0e0">
+				<P  ><FONT COLOR="#333333"><FONT ><font><I>V1
+				restricted, no bend along X axis</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=89 BGCOLOR="#e0e0e0">
+				<P  ><FONT COLOR="#333333"><FONT ><font><I>V1,
+				H1 restricted,</I></FONT></FONT></FONT></P>
+				<P  ><FONT COLOR="#333333"><FONT ><font><I>no
+				bend at all</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=153 BGCOLOR="#e0e0e0">
+				<P  ><FONT COLOR="#333333"><FONT ><font><I>H1
+				restricted, no bend along Z axis</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=152 BGCOLOR="#e0e0e0">
+				<P  ><FONT COLOR="#333333"><FONT ><font><I>V1,
+				V2, H1 restricted,</I></FONT></FONT></FONT></P>
+				<P  ><FONT COLOR="#333333"><FONT ><font><I>no
+				bend at all</I></FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD ROWSPAN=4 WIDTH=88>
+				<P  STYLE="font-style: normal; font-weight: medium"><BR>
+				</P>
+			</TD>
+			<TD WIDTH=88 >
+				<P  STYLE="font-style: normal; font-weight: medium"><IMG SRC="images/SDK_doc_FULL_html_1a631b11.jpg" NAME="Grafik40"  BORDER=0><BR>
+				</P>
+			</TD>
+			<TD ROWSPAN=2 WIDTH=89 >
+				<P  STYLE="font-style: normal; font-weight: medium"><IMG SRC="images/SDK_doc_FULL_html_576c38b5.jpg" NAME="Grafik42"  BORDER=0><BR>
+				</P>
+			</TD>
+			<TD ROWSPAN=3 WIDTH=153 >
+				<P  STYLE="font-style: normal; font-weight: medium"><IMG SRC="images/SDK_doc_FULL_html_acbe70a.jpg" NAME="Grafik39"  BORDER=0><BR>
+				</P>
+			</TD>
+			<TD ROWSPAN=2 WIDTH=152 >
+				<P  ><IMG SRC="images/SDK_doc_FULL_html_260ec1d9.jpg" NAME="Grafik38"  BORDER=0><BR>
+				</P>
+			</TD>
+		</TR>
+		<TR>
+			<TD ROWSPAN=3 WIDTH=88 VALIGN=TOP BGCOLOR="#e0e0e0">
+				<P  STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>V1,
+				H1, restricted, no bend along X axis at all, no bend along Z axis on "upper" half of the tile</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD ROWSPAN=2 WIDTH=89 BGCOLOR="#e0e0e0">
+				<P  ><FONT COLOR="#333333"><FONT ><font><I>V1,
+				H1, H2 restricted,</I></FONT></FONT></FONT></P>
+				<P  ><FONT COLOR="#333333"><FONT ><font><I>no
+				bend at all</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD ROWSPAN=2 WIDTH=152 HEIGHT=63 BGCOLOR="#e0e0e0">
+				<P  ><FONT COLOR="#333333"><FONT ><font><I>V1,
+				V2, H1, H2 restricted, no bend at all</I></FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR>
+			<TD WIDTH=153 VALIGN=TOP BGCOLOR="#e0e0e0">
+				<P  STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>V2,
+				H2 restricted, any bend except for "upper left" quarter permitted</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+
+</TABLE>
+<P  ><BR>
+</P>
+<P  ><img src="mark.gif" align=left><FONT COLOR="#333333"><FONT ><font><I>V2
+and H2 are only available on tiles bigger than 1x1 (20x20m)!</I></FONT></FONT></FONT></P>
+<P  ><BR>
+</P>
+<P  ><FONT COLOR="#333333"><FONT ><font>It
+is possible to set the &ldquo;V1&rdquo;, &ldquo;V2&rdquo;, &ldquo;H1&rdquo;
+and &ldquo;H2&rdquo; values in any sequence. Be sure to end the bend
+restrictions line with &ldquo;STOP&rdquo; to mark there won't follow
+any more values.</FONT></FONT></FONT></P>
+
+
+<script language="JavaScript">
+  <!--
+      ClosePage();
+   //-->
+</script>
+
+
+</body>
+
+</html>

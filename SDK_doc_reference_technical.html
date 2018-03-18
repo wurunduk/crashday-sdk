@@ -1,0 +1,1023 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.9.118  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Jan Bodenstein">
+	<META NAME="CREATED" CONTENT="20060328;15423900">
+	<META NAME="CHANGEDBY" CONTENT="Jan Bodenstein">
+	<META NAME="CHANGED" CONTENT="20060328;15460200">
+
+	  <link rel="StyleSheet" href="help.css" title="stylesheet" type="text/css">
+</HEAD>
+<BODY>
+
+<table border=1>
+<tr>
+<td width=640>
+
+<p >
+<FONT COLOR="#333333"><FONT><FONT  ><B><SPAN>6.
+Technical reference</SPAN></B></FONT></FONT></FONT></P>
+<p  >
+<BR>
+</P>
+<p  >
+<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>This
+paragraph is a documentation on Crashday's technical details
+including textures, &ldquo;level of detail&rdquo; and the
+.p3d-format.</SPAN></FONT></FONT></FONT></P>
+<p >
+<BR>
+</P>
+<p  >
+<FONT COLOR="#333333"><FONT ><FONT SIZE=4><B><SPAN>6.1.
+Textures and shaders</SPAN></B></FONT></FONT></FONT></P>
+<p >
+<BR>
+</P>
+<p >
+<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>Crashday's
+textures are usually consisting of two files. The bitmap file (.dds,
+.tga) and the material shader file (.tex). If no shader file is
+available, the in-game material will be provided with default shader
+parameters. But nevertheless be sure to have a .tex-file created for
+any new texture you added. Textures and their related .tex-files are
+required to have the same filename and be in the same directory. </SPAN></FONT></FONT></FONT>
+</P>
+<p >
+<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>Except
+for cars all textures are located in [crashday]\textures (in
+subfolders for special purposes).</SPAN></FONT></FONT></FONT></P>
+<p >
+<BR>
+</P>
+<p >
+<FONT COLOR="#333333"><FONT ><FONT ><I><SPAN>Note:</SPAN></I></FONT></FONT></FONT></P>
+<p >
+<FONT COLOR="#333333"><FONT ><FONT ><I><SPAN>Due
+to video card capabilities, Crashday (like any other realtime
+application) only supports dimensions of 16x16, 32x128, 1024x1024,
+etc. (potence with basis 2)</SPAN></I></FONT></FONT></FONT></P>
+<p >
+<BR>
+</P>
+<p  >
+<FONT COLOR="#333333"><FONT ><FONT SIZE=3><B><SPAN>.dds
+textures in Crashday</SPAN></B></FONT></FONT></FONT></P>
+<p  >
+<BR>
+</P>
+<p >
+<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>In
+Crashday the .dds format is usually used for texturing objects like
+track pieces.  As .dds is a compressed texture format, it offers a
+very small file size but with some exceptions:</SPAN></FONT></FONT></FONT></P>
+<UL>
+	<LI><p >
+	<SPAN ID="Rahmen34" DIR="LTR" >
+		<P STYLE="margin-top: 0.21cm"><IMG SRC="images/SDK_doc_reference_technical_html_596660f4.jpg" NAME="Grafik12" BORDER=0><BR CLEAR=LEFT><FONT COLOR="#333333"><FONT ><FONT ><I>Original
+		&ldquo;floor1&rdquo; texture and desaturated version</I></FONT></FONT></FONT></P>
+	</SPAN><BR CLEAR=LEFT><FONT COLOR="#333333"><FONT ><FONT >it
+	holds its own precalculated mipmaps so be sure they are generated
+	when exporting .dds with your graphics application</FONT></FONT></FONT>
+	</P>
+	<LI><p >
+	<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>it
+	is capable of an alpha channel so be sure to have one set when
+	exporting .dds with your graphics application</SPAN></FONT></FONT></FONT></P>
+	<LI><p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+	<FONT COLOR="#4c4c4c"><FONT ><FONT  ><SPAN>it
+	needs a related medium and lowres version in the
+	&ldquo;medium_detail_textures&rdquo; and &rdquo;low_detail_textures&rdquo;
+	folders</SPAN></FONT></FONT></FONT></P>
+	<LI><p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+	<FONT COLOR="#4c4c4c"><FONT ><FONT  ><SPAN>Crashday
+	desaturates every texture in-game. As post-processing isn't
+	supported by .dds format, you need to do it manually with your
+	graphics application. Best way to do this is applying a simple grey
+	layer with 50% color-blend on top of your texture.</SPAN></FONT></FONT></FONT></P>
+</UL>
+<p >
+<BR>
+</P>
+<p  >
+<FONT COLOR="#333333"><FONT ><FONT SIZE=3><B><SPAN>.tga
+textures in Crashday</SPAN></B></FONT></FONT></FONT></P>
+<p  >
+<BR>
+</P>
+<p >
+<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>Crashday
+primarily uses the .tga-format for car texturing. However you can of
+course use it for any other purpose too. But be warned , as it is a
+non-compressed format it uses much more video memory. Below some
+particularities when working with .tga format are listed:</SPAN></FONT></FONT></FONT></P>
+<UL>
+	<LI><p >
+	<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>mipmaps
+	for .tga-files are created by Crashday during runtime</SPAN></FONT></FONT></FONT></P>
+	<LI><p >
+	<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>it
+	is capable of an alpha channel so be sure to have one set when
+	exporting .tga with your graphics application</SPAN></FONT></FONT></FONT></P>
+	<LI><p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+	<FONT COLOR="#4c4c4c"><FONT ><FONT  ><SPAN>it
+	needs no related medium and lowres version in the
+	&ldquo;medium_detail_textures&rdquo; and &rdquo;low_detail_textures&rdquo;
+	folders, they are created by Crashday during runtime</SPAN></FONT></FONT></FONT></P>
+	<LI><p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+	<FONT COLOR="#4c4c4c"><FONT ><FONT  ><SPAN>be
+	sure to use .tga format when creating car textures as .dds isn't
+	capable of in-game color changing</SPAN></FONT></FONT></FONT></P>
+</UL>
+<p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<p  STYLE="background: transparent; font-style: normal; text-decoration: none">
+<FONT COLOR="#4c4c4c"><FONT ><FONT SIZE=3><B><SPAN>Explanation
+of Crashday's .tex-shading files</SPAN></B></FONT></FONT></FONT></P>
+<p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#4c4c4c"><FONT ><FONT  ><SPAN>A
+texture shader info file defines the way how a certain texture is
+being shaded in Crashday (i.e. lighting and rendering). Also it
+defines the physical material a texture is of. The file is an ASCII
+.tex-file associated to a texture with the same name and the
+extension .dds/.tga in one of the texture folders.</SPAN></FONT></FONT></FONT></P>
+<p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#4c4c4c"><FONT ><FONT  ><SPAN>The
+following list explains the shading file in detail:</SPAN></FONT></FONT></FONT></P>
+<p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<TABLE WIDTH=601 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=256>
+	<COL WIDTH=335>
+	<TR>
+		<td WIDTH=256 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I><B>Example
+			file: floor1.cfl</B></I></FONT></FONT></FONT></P>
+		</td>
+		<td WIDTH=335 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I><B>Explanation</B></I></FONT></FONT></FONT></P>
+		</td>
+	</TR>
+	<TR>
+		<TD WIDTH=256 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>#
+			no alpha</I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=335 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333">&ldquo;<FONT ><FONT >has_alpha&rdquo;
+			if alpha channel is used for transparency, otherwise leave empty
+			(or comment)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=256 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>#
+			has mipmaps</I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=335 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333">&ldquo;<FONT ><FONT >disable_mipmapping&rdquo;
+			if game should not use mipmapping for this texture (especially for
+			cars), otherwise leave empty (or comment)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=256 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>default
+			<FONT COLOR="#666666"># ingame material type</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=335 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >material
+			type defines the physical material a texture is of, either
+			&ldquo;default&rdquo; (asphalt, concrete) or &ldquo;grass&rdquo;
+			(loose floor, dirt roads)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=256 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>use_shaderparams_from</I></FONT></FONT></FONT></P>
+		</TD>
+		<TD ROWSPAN=2 WIDTH=335 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >either
+			reference to an existing shader file or definition of own shader
+			parameters (see below)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=256 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>_ground.tex</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<p >
+<BR>
+</P>
+<P><FONT COLOR="#333333"><FONT ><FONT  >Crashday
+only works with a set of predefined shaders, which can partly be
+modified by the values below the shader type in the shader file.</FONT></FONT></FONT></P>
+<p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>The
+supported types are:</SPAN></FONT></FONT></FONT></P>
+<p >
+<BR>
+</P>
+<TABLE WIDTH=601 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=265>
+	<COL WIDTH=326>
+	<TR>
+		<td WIDTH=265 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I><B>default</B></I></FONT></FONT></FONT></P>
+		</td>
+		<td WIDTH=326 BGCOLOR="#b3b3b3">
+			<p ><FONT COLOR="#333333"><FONT ><FONT >simple
+			diffuse lighting (default shading type)</FONT></FONT></FONT></P>
+		</td>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>default
+			<FONT COLOR="#666666"># shader type</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >just
+			that line, no additional parameters</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#b3b3b3">
+			<P ALIGN=CENTER><FONT COLOR="#333333"><FONT ><FONT ><I><B>specularvertex</B></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT >diffuse
+			lighting with specular reflection map</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>specularvertex<FONT COLOR="#666666">
+			# shader type</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >specular
+			identifier</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>ultra
+			 <FONT COLOR="#666666"># minimum quality to activate shader</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >the
+			&ldquo;Surface Reflection Quality&rdquo; that has to be set in
+			Crashday's graphics option menu to activate this shader</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>_self_
+			<FONT COLOR="#666666"># specular map</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >either
+			&ldquo;_self_&rdquo; to use own alpha channel as secular map, or
+			specify a different file to use its alpha channel</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>0.7
+			<FONT COLOR="#666666"># overall strength</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >specular
+			overall strength</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>2
+			<FONT COLOR="#666666"># power exponent</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >specular
+			power exponent</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>1
+			<FONT COLOR="#666666"># remaining diffuse sun light</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >the
+			remaining diffuse brightness on non-reflecting areas of an object</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#b3b3b3">
+			<P ALIGN=CENTER><FONT COLOR="#333333"><FONT ><FONT ><I><B>diffuseenvmap</B></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT >diffuse
+			lighting with environment mapping</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>diffuseenvmap<FONT COLOR="#666666">
+			# shader type</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >specular
+			identifier</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>0.3
+			<FONT COLOR="#666666"># minimum reflection</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >minimum
+			reflection strength</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>0.7
+			<FONT COLOR="#666666"># maximum reflection</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >maximum
+			reflection strength</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>3
+			<FONT COLOR="#666666"># fresnel exponent</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >fresnel
+			exponent</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#b3b3b3">
+			<P ALIGN=CENTER><FONT COLOR="#333333"><FONT ><FONT ><I><B>chrome</B></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT >chrome
+			shader</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>chrome<FONT COLOR="#666666">
+			# shader type</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >specular
+			identifier</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>1
+			<FONT COLOR="#666666"># amount of chrome</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >amount
+			of chrome blended against diffuse</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#b3b3b3">
+			<P ALIGN=CENTER><FONT COLOR="#333333"><FONT ><FONT ><I><B>additiveblend</B></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT >additively
+			blended textures</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>additiveblend
+			<FONT COLOR="#666666"># shader type</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >just
+			that line, no additional parameters</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<p >
+<BR>
+</P>
+<p >
+<BR>
+</P>
+<p  STYLE="margin-bottom: 0cm; background: transparent"><FONT COLOR="#333333"><FONT ><FONT SIZE=4><B>6.2.
+Overview of existing material shaders</B></FONT></FONT></FONT></P>
+<p >
+<BR>
+</P>
+<p >
+<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>Crashday
+offers a range of existing shaders files and shared materials for
+general purposes. (especially when creating cars)</SPAN></FONT></FONT></FONT></P>
+<p >
+<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>Below
+is a list of predefined shader files. Feel free to reference to them:</SPAN></FONT></FONT></FONT></P>
+<p >
+<BR>
+</P>
+		<TABLE WIDTH=565 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=130>
+			<COL WIDTH=425>
+			<TR>
+				<TD WIDTH=130 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>_asphalt.tex</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >material
+					shader appropriate for asphalt textures</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=130 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>_cardboard.tex</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >material
+					shader appropriate for paper etc.</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=130 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>_concrete.tex</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >material
+					shader appropriate for concrete textures</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=130 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>_ground.tex</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >material
+					shader appropriate for natural floors (e.g. grass)</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=130 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>_metal.tex</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >material
+					shader appropriate for metal textures</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=130 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>_plaster.tex</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >material
+					shader appropriate for plaster walls etc.</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=130 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>_plastic.tex</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >material
+					shader appropriate for plastic surfces</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=130 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>_rim.tex</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >material
+					shader appropriate for rim metal</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=130 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>_wood.tex</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >material
+					shader appropriate for wood textures</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+<p >
+<BR>
+</P>
+<p >
+<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>This
+is a list of existing shared materials that can be used when
+texturing cars for example:</SPAN></FONT></FONT></FONT></P>
+<p >
+<BR>
+</P>
+		<TABLE WIDTH=560 BORDER=1 BORDERCOLOR="#e7e7e7" CELLPADDING=5 CELLSPACING=0>
+			<COL WIDTH=108>
+			<COL WIDTH=325>
+			<COL WIDTH=95>
+			<tdEAD>
+				<TR VALIGN=TOP>
+					<td WIDTH=108 BGCOLOR="#e7e7e7">
+						<p ><FONT COLOR="#000000"><FONT ><FONT ><I>glass.dds</I></FONT></FONT></FONT></P>
+					</td>
+					<td WIDTH=325>
+						<p ><FONT COLOR="#333333"><FONT ><FONT >reflective
+						glass material used for all glass parts on cars (has damage
+						map)</FONT></FONT></FONT></P>
+					</td>
+					<td WIDTH=95>
+						<p ><IMG SRC="images/SDK_doc_reference_technical_html_3e116d47.jpg" NAME="Grafik10" BORDER=0><BR>
+						</P>
+					</td>
+				</TR>
+			</tdEAD>
+			<TBODY>
+				<TR VALIGN=TOP>
+					<TD WIDTH=108 BGCOLOR="#e7e7e7">
+						<P><FONT COLOR="#000000"><FONT ><FONT ><I>carplast.dds</I></FONT></FONT></FONT></P>
+					</TD>
+					<td WIDTH=325>
+						<p ><FONT COLOR="#333333"><FONT ><FONT >grey
+						plastic used for bright plastic</FONT></FONT></FONT></P>
+						<p ><FONT COLOR="#333333"><FONT ><FONT >parts
+						on cars</FONT></FONT></FONT></P>
+					</td>
+					<td WIDTH=95>
+						<p ><IMG SRC="images/SDK_doc_reference_technical_html_245dc2f6.jpg" NAME="Grafik11" BORDER=0><BR>
+						</P>
+					</td>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=108 BGCOLOR="#e7e7e7">
+						<P><FONT COLOR="#000000"><FONT ><FONT ><I>carplas2.dds</I></FONT></FONT></FONT></P>
+					</TD>
+					<td WIDTH=325>
+						<p ><FONT COLOR="#333333"><FONT ><FONT >dark
+						plastic used for dark plastic</FONT></FONT></FONT></P>
+						<p ><FONT COLOR="#333333"><FONT ><FONT >parts
+						on cars</FONT></FONT></FONT></P>
+					</td>
+					<td WIDTH=95>
+						<p ><IMG SRC="images/SDK_doc_reference_technical_html_2c32aee4.jpg" NAME="Grafik53" BORDER=0><BR>
+						</P>
+					</td>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=108 BGCOLOR="#e7e7e7">
+						<P><FONT COLOR="#000000"><FONT ><FONT ><I>carplas3.dds</I></FONT></FONT></FONT></P>
+					</TD>
+					<TD WIDTH=325>
+						<p ><FONT COLOR="#333333"><FONT ><FONT >dark
+						reflective plastic used for reflecting plastic parts on cars</FONT></FONT></FONT></P>
+					</TD>
+					<td WIDTH=95>
+						<p ><IMG SRC="images/SDK_doc_reference_technical_html_553c5896.png" NAME="Grafik13" BORDER=0><BR>
+						</P>
+					</td>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=108 BGCOLOR="#e7e7e7">
+						<P><FONT COLOR="#000000"><FONT ><FONT ><I>lighchrm.dds</I></FONT></FONT></FONT></P>
+					</TD>
+					<TD WIDTH=325>
+						<p ><FONT COLOR="#333333"><FONT ><FONT >headlight
+						chrome used for reflecting chrome-like surfaces in headlights</FONT></FONT></FONT></P>
+					</TD>
+					<td WIDTH=95>
+						<p ><IMG SRC="images/SDK_doc_reference_technical_html_515da0b2.jpg" NAME="Grafik14" BORDER=0><BR>
+						</P>
+					</td>
+				</TR>
+				<TR VALIGN=TOP>
+					<TD WIDTH=108 BGCOLOR="#e7e7e7">
+						<P><FONT COLOR="#000000"><FONT ><FONT ><I>rubber.dds</I></FONT></FONT></FONT></P>
+					</TD>
+					<TD WIDTH=325>
+						<p ><FONT COLOR="#333333"><FONT ><FONT >rubber
+						used for parts that seperate windows and car body</FONT></FONT></FONT></P>
+					</TD>
+					<td WIDTH=95>
+						<p ><IMG SRC="images/SDK_doc_reference_technical_html_m6f994787.jpg" NAME="Grafik15" BORDER=0><BR>
+						</P>
+					</td>
+				</TR>
+			</TBODY>
+		</TABLE>
+<p  STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<p  STYLE="margin-bottom: 0cm; text-decoration: none"><BR>
+</P>
+<p  STYLE="margin-bottom: 0cm"><FONT COLOR="#333333"><FONT ><FONT SIZE=4><B>6.3
+Level Of Detail implementation</B></FONT></FONT></FONT></P>
+<p ><BR>
+</P>
+<p ><FONT COLOR="#333333"><FONT ><FONT  >Crashday
+offers up to four different &ldquo;level of detail&rdquo; steps which
+will be visible with different distances if the corresponding mesh is
+available. The collision detection is not influenced by any of these
+meshes. It is only calculated by the standard visible mesh.</FONT></FONT></FONT></P>
+<p ><FONT COLOR="#333333">&ldquo;<FONT ><FONT  >Level
+of detail&rdquo; meshes are identified by their names. Below is a
+list of all available steps:</FONT></FONT></FONT></P>
+<p ><BR>
+</P>
+		<TABLE WIDTH=560 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=125>
+			<COL WIDTH=425>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>[meshname].0</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >displayed
+					when closer than 36 meters</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>[meshname]</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >standard
+					mesh, displayed whenever no &ldquo;level of detail&rdquo; is
+					displayed</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>[meshname].2</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >displayed
+					when distance more than 120 meters</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>[meshname].3</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >displayed
+					when distance more than 250 meters</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>[meshname].4</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >displayed
+					when distance more than 370 meters</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+<p ><BR>
+</P>
+<p ><FONT COLOR="#333333"><FONT ><FONT  >Meshes
+that have bend capabilities (see 4.4/4.5.) can be provided with
+&ldquo;level of detail&rdquo; too, but make sure the borders of any
+&ldquo;level of detail&rdquo; mesh is still divided every 5m.
+Otherwise ugly holes will appear in the distance.</FONT></FONT></FONT></P>
+<p ><BR>
+</P>
+<p ><SPAN ID="Rahmen35" DIR="LTR" >
+	<P STYLE="margin-top: 0.21cm"><IMG SRC="images/SDK_doc_reference_technical_html_12e75529.jpg" NAME="Grafik54" BORDER=0><BR CLEAR=LEFT><FONT COLOR="#333333"><FONT ><FONT ><I>Main
+	mesh in brgloop.p3d</I></FONT></FONT></FONT></P>
+</SPAN><BR CLEAR=LEFT>
+<SPAN ID="Rahmen36" DIR="LTR" >
+	<P STYLE="margin-top: 0.21cm"><IMG SRC="images/SDK_doc_reference_technical_html_m664b5c86.jpg" NAME="Grafik55" BORDER=0><BR CLEAR=LEFT><FONT COLOR="#333333"><FONT ><FONT ><I>Main.3
+	mesh in brgloop.p3d</I></FONT></FONT></FONT></P>
+</SPAN><BR CLEAR=LEFT>
+<SPAN ID="Rahmen37" DIR="LTR" >
+	<P STYLE="margin-top: 0.21cm"><IMG SRC="images/SDK_doc_reference_technical_html_49e67a52.jpg" NAME="Grafik56" BORDER=0><BR CLEAR=LEFT><FONT COLOR="#333333"><FONT ><FONT ><I>Main.4
+	mesh in brgloop.p3d</I></FONT></FONT></FONT></P>
+</SPAN><BR CLEAR=LEFT><BR>
+</P>
+<p ><FONT COLOR="#333333"><FONT ><FONT ><I>NOTE:</I></FONT></FONT></FONT></P>
+<p ><FONT COLOR="#333333"><FONT ><FONT ><I>Not
+every mesh needs one or more &ldquo;level of detail&rdquo; step(s)
+and not every mesh needs all steps. Please use &ldquo;level of
+detail&rdquo; meshes where necessary, because more meshes per .p3d
+model file will cost more performance too.</I></FONT></FONT></FONT></P>
+<p ><BR>
+</P>
+<p ><BR>
+</P>
+<p  STYLE="margin-bottom: 0cm"><FONT COLOR="#333333"><FONT ><FONT SIZE=4><B>6.4.
+Official Crashday car certificate guidelines</B></FONT></FONT></FONT></P>
+<p ><BR>
+</P>
+<p ><FONT COLOR="#333333"><FONT ><FONT  >This
+is an overview sheet of specifications a complete Crashday update car
+should fulfil:</FONT></FONT></FONT></P>
+<p ><BR>
+</P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=560 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=554>
+			<TR>
+				<TD WIDTH=554 BGCOLOR="#b3b3b3">
+					<P STYLE="font-style: normal"><FONT COLOR="#333333"><FONT ><FONT ><B>necessary
+					files</B></FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=554>
+					<UL>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>vehicle
+						model file (.p3d)</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>vehicle
+						specification file (carinfo.cca)</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>vehicle
+						shop list file (shop.lst)</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>vehicle
+						torque file (.crv)</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>unique
+						car logo (carlogo.tga)</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>GI
+						rendered shadow texture (shadow.tga)</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>obsolete
+						rpm-meter (rpmtex.tga)</I></FONT></FONT></FONT></P>
+					</UL>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=554 BGCOLOR="#b3b3b3">
+					<P STYLE="font-style: normal"><FONT COLOR="#333333"><FONT ><FONT ><B>mesh
+					features</B></FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=554>
+					<UL>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>detachable
+						parts like bumpers and mirrors</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>overlay
+						light meshes with corresponding light objects</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>static
+						minigun body mesh</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>collision
+						mesh</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>ray
+						casting mesh</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333">&ldquo;<FONT ><FONT ><I>level
+						of detail&rdquo; mesh</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>polygon
+						count of about 6000 polys visible at a time</I></FONT></FONT></FONT></P>
+					</UL>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=554 BGCOLOR="#b3b3b3">
+					<P STYLE="font-style: normal"><FONT COLOR="#333333"><FONT ><FONT ><B>texture
+					features</B></FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=554>
+					<UL>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>one
+						or two body textures with GI baked pre-shading</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>two
+						additional textures for lights and mis parts</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>damage
+						maps for each of them</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>.tex
+						shader files for each of them</I></FONT></FONT></FONT></P>
+					</UL>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=554 BGCOLOR="#b3b3b3">
+					<P STYLE="font-style: normal"><FONT COLOR="#333333"><FONT ><FONT ><B>.cca
+					features</B></FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=554>
+					<UL>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>correct
+						physical data</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>correctly
+						set positions</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>AI
+						setups</I></FONT></FONT></FONT></P>
+					</UL>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=554 BGCOLOR="#b3b3b3">
+					<P STYLE="font-style: normal"><FONT COLOR="#333333"><FONT ><FONT ><B>other
+					features</B></FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=554>
+					<UL>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>preview
+						image for car manager</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>version
+						information file</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>everything
+						included in car packet file (.cpk)</I></FONT></FONT></FONT></P>
+					</UL>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<p ><BR>
+</P>
+<p ><BR>
+</P>
+<p  >
+<FONT COLOR="#333333"><FONT ><FONT SIZE=4><B><SPAN>6.5.
+P3D file format specification</SPAN></B></FONT></FONT></FONT></P>
+<p >
+<BR>
+</P>
+<p  >
+<FONT COLOR="#ff0000"><FONT ><FONT  ><B><SPAN>Hm,
+hier wei&szlig; ich ehrlich gesagt nicht wirklich was rein soll :)</SPAN></B></FONT></FONT></FONT></P>
+<p >
+<BR>
+</P>
+<p >
+<BR>
+</P>
+<p  >
+<FONT COLOR="#333333"><FONT><FONT  ><B><SPAN>7.
+Example reference</SPAN></B></FONT></FONT></FONT></P>
+<p >
+<BR>
+</P>
+<p >
+<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>The
+SDK provides an example file (.max/.3ds) of each track piece theme.
+(see appendix) This way you got the exact positions of border
+vertices to create your own track pieces matching to the existing
+ones.</SPAN></FONT></FONT></FONT></P>
+<p >
+<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>The
+following list shows all delivered files:</SPAN></FONT></FONT></FONT></P>
+<p >
+<BR>
+</P>
+<DL>
+	<DL>
+		<DD>
+		<TABLE WIDTH=560 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=125>
+			<COL WIDTH=425>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>arenastr.3ds</I></FONT></FONT></FONT></P>
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>arenastr.max</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >straight
+					arena track piece</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>arenastrc.3ds</I></FONT></FONT></FONT></P>
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>arenastrc.max</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >straight
+					arena track piece with roof</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>bridge1.3ds</I></FONT></FONT></FONT></P>
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>bridge1.max</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >displayed
+					when distance more than 120 meters</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>dirtroad.3ds</I></FONT></FONT></FONT></P>
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>dirtroad.max</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >straight
+					off-road track piece</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>field.3ds</I></FONT></FONT></FONT></P>
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>field.max</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >plane
+					grassy track piece</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>highway2.3ds</I></FONT></FONT></FONT></P>
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>highway2.max</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >one
+					half of speedway</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>rwstreet.3ds</I></FONT></FONT></FONT></P>
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>rwstreet.max</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >straight
+					race track piece</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>street.3ds</I></FONT></FONT></FONT></P>
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>street.max</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >straight
+					town road track piece</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>streetb1.3ds</I></FONT></FONT></FONT></P>
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>streetb1.max</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >straight
+					country road track piece</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>subtun.3ds</I></FONT></FONT></FONT></P>
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>subtun.max</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >straight
+					small tunnel track piece</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=125 BGCOLOR="#e7e7e7">
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>wsubtun.3ds</I></FONT></FONT></FONT></P>
+					<P><FONT COLOR="#333333"><FONT ><FONT ><I>wsubtun.max</I></FONT></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=425 BGCOLOR="#ffffff">
+					<P><FONT COLOR="#333333"><FONT ><FONT >wide
+					tunnel track piece</FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TABLE>
+	</DL>
+</DL>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+
+</td>
+</tr>
+</table>
+
+
+</BODY>
+
+
+
+</HTML>

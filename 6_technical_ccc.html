@@ -1,0 +1,140 @@
+<html>
+
+<head>
+  <title>Crashday Software Development Kit - Documentation</title>
+  <link rel="StyleSheet" href="help.css" title="stylesheet" type="text/css">
+  <script language="JavaScript" src="menu.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<script language="JavaScript">
+  <!--
+      OpenPage( "6. Technical Reference", "Official Crashday Car Certificate guidelines" );
+   //-->
+</script>
+
+
+
+<p ><FONT COLOR="#333333"><FONT ><FONT  ><img src="ccc_small.gif" align=right>
+The <b>"Crashday Car Certificate" ("CCC")</b> is a specification guideline on how to create
+official standarized vehicles for Crashday. If you create your vehicle according to these guidelines only, other players will know
+that this vehicle has the same standard, quality and performance requirements as the original cars.
+<br>
+<br>
+Feel free to use the term <b>"CCC"</b> (or its logo) when presenting your vehicle online if it meets these requirements.
+<br>       <br>
+<b>Good luck!</b>
+<br>
+</FONT></FONT></FONT></P>
+
+<div align=center>
+<br>
+<TABLE WIDTH=560 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+<tr>
+<td align=center valign=center><B>The Crashday Car Certificate</b></td>
+</tr>
+<tr>
+<td>
+		<TABLE WIDTH=560 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+			<COL WIDTH=554>
+			<TR>
+				<TD align=center WIDTH=554 BGCOLOR="#b3b3b3">
+					<P STYLE="font-style: normal"><FONT COLOR="#333333"><FONT ><FONT ><B>Modeling Guidelines</B></FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=554>
+					<UL>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>"main" mesh including interior
+						</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>detachable meshes such as bumpers, skirts, wipers and mirrors (where applicable). Doors or hoods can remain part of the "main" mesh
+						</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>breakable windows, headlights and taillights with correct glass damage texture mapping
+						</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>"mainshad" raycasting mesh, designed according to guidelines
+						</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>"maincoll" collision mesh, designed according to guidelines
+						</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>"lod" low-detail mesh of full car, designed according to guidelines
+						</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>"mgbody" minigun mounting mesh
+						</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>overlay meshes for brakelights, headlights and taillights
+						</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>associated light objects for each light overlay mesh to create flares
+						</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>the smoothing of surfaces and edges in terms of detail looks close to that of the Crashday original cars (simple conversions of low-poly cars are not valid)
+						</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>the number of simultaneously rendered triangles excluding wheels in-game is between 5,000 and 9,000 (it does play no role if much more triangles are contained in the model, as long as they are not rendered all at once)
+						</I></FONT></FONT></FONT></P>
+					</UL>
+				</TD>
+			</TR>
+			<TR>
+				<TD align=center WIDTH=554 BGCOLOR="#b3b3b3">
+					<P STYLE="font-style: normal"><FONT COLOR="#333333"><FONT ><FONT ><B>Texturing Guidelines</B></FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=554>
+					<UL>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>one 1024x1024 or two 512x512 grey-scale main body texture(s) with painted door gaps to be colored in-game (if custom color not applicable to vehicle, colored texture can be used)</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>one 512x512 interior/miscellaneous parts texture including a simple dashboard</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>all vehicle textures are shadow-baked using Radiosity, created according to guidelines</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>one damage texture available for each "non-damaged" texture used. The grey-scale body texture damage map(s) contain(s) an alpha channel with masked scratch areas not to be colored</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>car shadow texture created using Radiosity</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>unique car logo bitmap</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>each texture introduced has a proper shader setup file (.tex)</I></FONT></FONT></FONT></P>
+					</UL>
+				</TD>
+			</TR>
+			<TR>
+				<TD align=center WIDTH=554 BGCOLOR="#b3b3b3">
+					<P STYLE="font-style: normal"><FONT COLOR="#333333"><FONT ><FONT ><B>Car Setup Features (.cca)</B></FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=554>
+					<UL>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>long and short form of car name available</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>appropriate choice of car class</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>roughly correct physical data and vehicle setup</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>full setup of cameras and others positioning information</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>color selection (if applicable)   </I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>definition of AI/multiplayer tuning kit presets  </I></FONT></FONT></FONT></P>
+					</UL>
+				</TD>
+			</TR>
+			<TR>
+				<TD align=center WIDTH=554 BGCOLOR="#b3b3b3">
+					<P STYLE="font-style: normal"><FONT COLOR="#333333"><FONT ><FONT ><B>Distribution Features</B></FONT></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD WIDTH=554>
+					<UL>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>all vehicle files distributed as a single .cpk package</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>version and author information available as included version.txt</I></FONT></FONT></FONT></P>
+						<LI><P><FONT COLOR="#333333"><FONT ><FONT ><I>preview picture available as included preview.bmp</I></FONT></FONT></FONT></P>
+					</UL>
+				</TD>
+			</TR>
+		</TABLE>
+</td>
+</tr>
+</table>
+
+</div>
+
+<script language="JavaScript">
+  <!--
+      ClosePage();
+   //-->
+</script>
+
+
+</body>
+
+</html>

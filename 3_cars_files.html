@@ -1,0 +1,158 @@
+<html>
+
+<head>
+  <title>Crashday Software Development Kit - Documentation</title>
+  <link rel="StyleSheet" href="help.css" title="stylesheet" type="text/css">
+  <script language="JavaScript" src="menu.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<script language="JavaScript">
+  <!--
+      OpenPage( "3. Creating cars", "Overview of files of a custom car" );
+   //-->
+</script>
+
+
+<P  STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<SPAN ID="Rahmen3" DIR="LTR">
+	<P STYLE="margin-top: 0.21cm; margin-bottom: 0.21cm"><IMG SRC="images/SDK_doc_FULL_html_m45de9cc.gif" NAME="Grafik3" BORDER=0><BR CLEAR=LEFT><FONT COLOR="#333333"><FONT ><font><I>The
+	contents of a typical car folder (required files are highlighted)</I></FONT></FONT></FONT></P>
+</SPAN><BR>
+</P>
+<P  STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#333333"><FONT ><font><SPAN>This
+is a short overview on the required and optional files for each car.</SPAN></FONT></FONT></FONT></P>
+<TABLE WIDTH=488 BORDER=1 BORDERCOLOR="#e7e7e7" CELLPADDING=5 CELLSPACING=0>
+	<COL WIDTH=192>
+	<COL WIDTH=274>
+
+		<TR VALIGN=TOP>
+			<td WIDTH=192 BGCOLOR="#ffcc99">
+				<P  ><FONT COLOR="#000000"><FONT ><font><I>carlogo.tga</I></FONT></FONT></FONT></P>
+			</td>
+			<td WIDTH=274>
+				<P  STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#4c4c4c"><FONT ><font>car's
+				logo, will appear in game's garage</FONT></FONT></FONT></P>
+			</td>
+		</TR>
+
+
+		<TR VALIGN=TOP>
+			<td WIDTH=192 BGCOLOR="#ffcc99">
+				<P  ><FONT COLOR="#000000"><FONT ><font><I>carlogo.tex</I></FONT></FONT></FONT></P>
+			</td>
+			<td WIDTH=274>
+				<P  STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#4c4c4c"><FONT ><font>shader
+				file for carlogo.tga</FONT></FONT></FONT></P>
+			</td>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=192 BGCOLOR="#ffcc99">
+				<P><FONT COLOR="#333333"><FONT ><font><I>rpmtex.tga</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=274>
+				<P><FONT COLOR="#333333"><FONT ><font>obsolete,
+				but still has to be present; copy+paste it from other cars</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=192 BGCOLOR="#ffcc99">
+				<P><FONT COLOR="#333333"><FONT ><font><I>shadow.tga</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=274>
+				<P><FONT COLOR="#333333"><FONT ><font>car shadow image</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=192 BGCOLOR="#ffcc99">
+				<P><FONT COLOR="#333333"><FONT ><font><I>shadow.tex</I></FONT></FONT></FONT></P>
+			</TD>
+			<td WIDTH=274>
+				<P  STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#4c4c4c"><FONT ><font>shader
+				file for shadow.tga</FONT></FONT></FONT></P>
+			</td>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=192 BGCOLOR="#ffcc99">
+				<P><FONT COLOR="#333333"><FONT ><font><I>carinfo.cca</I></FONT></FONT></FONT></P>
+			</TD>
+			<td WIDTH=274>
+				<P  STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font><FONT COLOR="#4c4c4c">text
+				file with physical and game relevant parameters </FONT>(see <a href="3_cars_ccasetup.html">Setup of car specification file</a>)</FONT></FONT></FONT></P>
+			</td>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=192 BGCOLOR="#ffcc99">
+				<P><FONT COLOR="#333333"><FONT ><font><I>[carname].crv</I></FONT></FONT></FONT></P>
+			</TD>
+			<td WIDTH=274>
+				<P  STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>text
+				file with engine's torque curve</FONT></FONT></FONT></P>
+			</td>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=192 BGCOLOR="#ffcc99">
+				<P><FONT COLOR="#333333"><FONT ><font><I>shop.lst</I></FONT></FONT></FONT></P>
+			</TD>
+			<td WIDTH=274>
+				<P  STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font><FONT COLOR="#4c4c4c">text
+				file listing all the parts that can be bought in the career shop
+				(see <a href="3_cars_shopparts.html">Shop and tuning parts</a>)</FONT></FONT></FONT></FONT></P>
+			</td>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=192 BGCOLOR="#ffcc99">
+				<P><FONT COLOR="#000000"><FONT ><font><I>[carname].p3d</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=274>
+				<P><FONT COLOR="#333333"><FONT ><font>the
+				3d model of the vehicle (see <a href="3_cars_modeling.html">Modeling guidelines</a>)</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=192 BGCOLOR="#e0e0e0">
+				<P  ><FONT COLOR="#000000"><FONT ><font><I>*.tga</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=274>
+				<P  STYLE="margin-left: 0.01cm; margin-right: 0.01cm; font-style: normal; font-weight: medium">
+				<FONT COLOR="#4c4c4c"><FONT ><font>any textures using freely
+				chosen names (see <a href="3_cars_texturing.html">Texturing guidelines</a>)</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=192 BGCOLOR="#e0e0e0">
+				<P  ><FONT COLOR="#000000"><FONT ><font><I>*.tex</I></FONT></FONT></FONT></P>
+			</TD>
+			<td WIDTH=274>
+				<P  STYLE="margin-left: 0.01cm; margin-right: 0.01cm; font-style: normal; font-weight: medium">
+				<FONT COLOR="#4c4c4c"><FONT ><font>shader
+				files for any .tga's</FONT></FONT></FONT></P>
+			</td>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=192 BGCOLOR="#e0e0e0">
+				<P  ><FONT COLOR="#000000"><FONT ><font><I>[carname]_def[inchsize].whl</I></FONT></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=274>
+				<P  STYLE="margin-left: 0.01cm; margin-right: 0.01cm; font-style: normal; font-weight: medium">
+				<FONT COLOR="#4c4c4c"><FONT ><font>wheel
+				definition file for default wheel (see <a href="3_cars_customwheels.html">Custom wheels</a>)</FONT></FONT></FONT></P>
+			</TD>
+		</TR>
+
+</TABLE>
+
+
+<script language="JavaScript">
+  <!--
+      ClosePage();
+   //-->
+</script>
+
+
+</body>
+
+</html>
