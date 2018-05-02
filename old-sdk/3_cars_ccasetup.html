@@ -1,0 +1,1824 @@
+<html>
+
+<head>
+  <title>Crashday Software Development Kit - Documentation</title>
+  <link rel="StyleSheet" href="help.css" title="stylesheet" type="text/css">
+  <script language="JavaScript" src="menu.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<script language="JavaScript">
+  <!--
+      OpenPage( "3. Creating cars", "Setup of car specification file (.cca)" );
+   //-->
+</script>
+
+
+<P  STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#333333"><FONT ><font><SPAN>This
+file is the most essential car description file. It contains all of
+the gameplay related information as well as the physical parameters.</SPAN></FONT></FONT></FONT></P>
+<br>
+	<P  STYLE="font-weight: medium; text-decoration: none">
+	<img src="images/mark.gif" align=left>
+<FONT COLOR="#333333"><FONT ><font><I><SPAN>Each
+	car needs a correct carinfo.cca to run! If the game crashes this is
+	most likely a cca-related problem. Do not change its structure, e.g.
+	add lines - the Crashday parser is very strict!</SPAN></I></FONT></FONT></FONT></P>
+	<P  STYLE="font-weight: medium; text-decoration: none">
+	<img src="images/mark.gif" align=left>
+<FONT COLOR="#333333"><FONT ><font><SPAN><I><font>All
+	positions are relative to the &ldquo;main&rdquo; mesh's center which is defined by its bounding box</FONT></I><BR></SPAN></FONT></FONT></FONT><BR>
+	</P>
+
+	<P  STYLE="font-weight: medium; text-decoration: none">
+	<img src="images/mark.gif" align=left>
+<FONT COLOR="#333333"><FONT ><font><SPAN><I><font>When referencing to .whl files that are not contained in the main wheel folder "[crashday]\tools\wheels", NEVER EVER reference to a wheel from another car! Doing this can confuse the Car Manager and it will not make your car work after installation on another machine! It is only valid to reference to a wheel that is in the own car folder itself.</FONT></I><BR></SPAN></FONT></FONT></FONT><BR>
+	</P>
+
+<P  STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+
+<P  STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#333333"><FONT ><font><SPAN>Following
+an example version of a &quot;carinfo.cca&quot; with explanations (the '#' character introduces a one-line comment).</SPAN></FONT></FONT></FONT></P>
+<TABLE WIDTH=620 BORDER=1 BORDERCOLOR="#e7e7e7" CELLPADDING=2 CELLSPACING=0 BGCOLOR="#ffeeee">
+	<COL WIDTH=86*>
+	<COL WIDTH=170*>
+	<TR>
+		<td WIDTH=33% BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><font><I><B>Example
+			file: carinfo.cca</B></I></FONT></FONT></FONT></P>
+		</td>
+		<td WIDTH=67% BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><font><I><B>Explanation</B></I></FONT></FONT></FONT></P>
+		</td>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#666666"><FONT ><font>#
+			&quot;Apachee&quot; description file</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>custom
+			info line</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>apachee.p3d</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>obsolete</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>apachee.p3d
+			<FONT COLOR="#666666"></FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>.p3d
+			model file of car</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>CARMETAL
+			<FONT COLOR="#666666"># car material</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>material
+			type of object, has to be &quot;CARMETAL&quot;</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>1870
+			<FONT COLOR="#666666"># mass in kg</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>total
+			mass in KG</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0
+			<FONT COLOR="#666666"># -obsolete-</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>obsolete</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0
+			-0.2 -0.23 <FONT COLOR="#666666"># center of gravity</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>center
+			of gravity</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>---
+			General ---</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>START
+			OF GENERAL PARAMETER SECTION</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>APACHEE
+			220X <FONT COLOR="#666666"># displayed name</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>full car
+			name, e.g. used from Car Manager</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>APACHEE</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>car
+			name short version (max 8 characters). Used for multiplayer lobby</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>main
+			maincoll mainshad det_l_mirr det_r_mirr gls_front gls_rear
+			gls_right gls_left gls_light0 gls_light_ det_numpl headl_l headl_r
+			headl_lr headl_rr brakel_l brakel_r det_wiper mg_body mg_body.2</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>this
+			list of space-separated mesh names defines all meshes of a car
+			that will always be visible on a car, whatever tuning
+			configuration is set up for it.<BR>Parts that usually belong to
+			this list are for example &quot;main&quot; (required), &quot;maincoll&quot;
+			(the collision shape), &quot;mainshad&quot; (the shadowing and
+			tracing shape) and things like headlight or window glass
+			meshes.<BR>Parts that are usually no default meshes of a vehicle
+			are bumpers or other tuning kits (basicly everything that can be
+			visually changed using tuning kits). The game grabs the list of these interchangeable meshes from the setup of each tuning kit itself
+			(described below in the tuning section)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>A
+			<FONT COLOR="#666666"># car &quot;quality class&quot;</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>defines
+			the default classification of a car. Possible values are &quot;E&quot;
+			(worst), &quot;D&quot;, &quot;C&quot;, &quot;B&quot; and &quot;A&quot;
+			(best). This classification can also be upgraded with tuning parts
+			(see tuning section below)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>default
+			<FONT COLOR="#666666"># author of car</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>author
+			that created the car</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>driver1.p3d
+			<FONT COLOR="#666666"># default driver</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>.p3d
+			file for default driver 3d model</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>sports_spoke18.whl
+			<FONT COLOR="#666666"># default</FONT> wheel</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>defines
+			the default wheel attached to the car. Wheels are identified by a
+			&quot;.whl&quot; file which is either located in the car folder
+			itself or in the global wheel directory [crashday]\trkdata\wheels.
+			This wheel file defines both the wheel's and rim's look as well as
+			the physical driving properties.<br><br><i>NOTE: if you created your own custom wheel, specify it by the string "[foldername].[wheelname].whl". A car folder's name and thus this line might be changed from the CarManager during car installation on another machine.</i></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0.635
+			<FONT COLOR="#666666"># min wheel size</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>defines
+			the minimum rim diameter (in meters) allowed for wheels </FONT></FONT></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0.76
+			<FONT COLOR="#666666"># max wheel size</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>defines
+			the maximum rim diameter (in meters) allowed for wheels </FONT></FONT></FONT>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>enginesounds/apachee/apachee</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>defines
+			the engine sound set from the sound folder. Each engine sound available has a &quot;.txt&quot;
+			file. The sound set must be specified without the file name
+			extension &quot;.txt&quot;.</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>1
+			<FONT COLOR="#666666"># can change the car's color?</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>is
+			possible to change the car's paint color (&quot;1&quot;) or not
+			(&quot;0&quot;)?</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>2
+			<FONT COLOR="#666666"># number of textures to paint for</FONT>
+			color change</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>if
+			a car's paint color can be changed, this value must specify a
+			number of textures to be colored (at least one). If the paint's
+			color can not be changed, this value is &quot;0&quot;.</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>body.tga
+			body2.tga <FONT COLOR="#666666"># list of textures for repaint</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>if
+			a car's paint color can be changed, this line lists all textures
+			to be colored, separated with spaces. If the paint's color can
+			not be changed, this value is &quot;NONE&quot;!</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>4
+			<FONT COLOR="#666666"># number of car damage textures</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>defines
+			the number of damage textures (0 or more)<BR><BR><I>NOTE: after
+			this line, one line for each damage texture follows. If no damage
+			textures are present, the following lines will be omitted!</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>body.tga
+			-&gt; body2.tga </FONT></FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>damage
+			texture 1 (syntax: &quot;[original texture] -&gt; [damage
+			texture]&quot;)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>glass.tga
+			-&gt; glass2.tga </FONT></FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>damage
+			texture 2</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>misc.tga
+			-&gt; misc2.tga</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>damage
+			texture 3</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>lights.tga
+			-&gt; lights2.tga</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>damage
+			texture 4</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>15
+			<FONT COLOR="#666666"># number of missiles</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>defines
+			the default number of missiles on this car</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>10
+			<FONT COLOR="#666666"># number of mines</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>obsolete</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>wide
+			<FONT COLOR="#666666"># type of numplate</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>type
+			of license plate on the car. Possible values are &quot;wide&quot;
+			(wide EU style), &quot;narrow&quot; (narrow style) or &quot;us&quot;
+			(American style). Usual global textures to use are &quot;l_def.tga&quot; (wide),
+			&quot;s_def.tga &quot; (narrow) or &quot;u_def.tga &quot; (US). For which license plate you decide depends on the dimensions of the plate that you have put on your car model</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P ALIGN=JUSTIFY STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>shadow.tga
+			<FONT COLOR="#666666"># shadow texture</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>texture
+			of the car shadow (required)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0.97
+			<FONT COLOR="#666666"># shadow dimension width</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>scaling
+			of shadow plate in width axis</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0.97
+			<FONT COLOR="#666666"># shadow dimension depth</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>scaling
+			of shadow plate in depth axis</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0
+			<FONT COLOR="#666666"># shadow shift in width direction</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>shifting
+			of shadow plate in width axis (in meters)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0
+			<FONT COLOR="#666666"># shadow shift in depth direction</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>shifting
+			of shadow plate in depth axis (in meters)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>---
+			Engine ---</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>START
+			OF ENGINE PARAMETER SECTION</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333">&nbsp;</FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>4wd
+			<FONT COLOR="#666666"># drive (&quot;front&quot;, &quot;rear&quot;,
+			&quot;4wd&quot;)</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>defines
+			the type of drive. Possible values are &quot;4wd&quot;, &quot;front&quot;
+			or &quot;rear&quot;</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>611
+			<FONT COLOR="#666666"># horsepowers</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>horse
+			powers of the car. Only used as a statistical value</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>6
+			<FONT COLOR="#666666"># gears (w/o rear+neutral)</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>number
+			of gears, not counting neutral and reverse</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>94
+			<FONT COLOR="#666666"># top speed (in m/s)</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>top
+			speed of car in m/s. To convert a km/h value to m/s divide by 3.6</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>580
+			<FONT COLOR="#666666"># Max. Engine torque in Nm</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>maximum
+			engine torque in Nm. For a specific RPM, the maximum torque is
+			multiplied with the value of the normalised torque curve at that
+			specific RPM point to retrieve the actual amount of torque</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>-80
+			<FONT COLOR="#666666"># Max. braking torque in Nm</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>maximum
+			braking torque in Nm.</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>apachee.crv
+			<FONT COLOR="#666666"># File of torque curve</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>torque
+			curve file containing the normalised torque curve of the engine.
+			Alternatively, you can use &quot;default&quot; to use a common
+			default torque curve</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>9000
+			<FONT COLOR="#666666"># Max RPM</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>maximum
+			engine RPM</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>1700
+			<FONT COLOR="#666666"># Idle RPM (startup rpm)</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>idle
+			RPM</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>4500
+			<FONT COLOR="#666666"># Shift-down-RPM</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>lowest
+			RPM point to shift down in automatic shifting</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>8000
+			<FONT COLOR="#666666"># Shift-up-RPM</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>highest
+			RPM point to shift up in automatic shifting</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>-3.58
+			3.7 2.5 1.8 1.4 1.15 0.95 <FONT COLOR="#666666"># Gear ratios</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>gear
+			ratios, starting with reverse gear followed by other non-neutral
+			gears</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>3.18
+			<FONT COLOR="#666666"># Differential ratio</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>differential
+			ratio</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>---
+			Physics ---</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>START
+			OF PHYSICS AND DRIVING PARAMETER SECTION</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0.012
+			<FONT COLOR="#666666"># energy loss</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>amount
+			of damage inflicted to own car in crashes</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>4
+			<FONT COLOR="#666666"># crash-damage multiplier</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>amount
+			of damage inflicted to other cars in crashes (final damage inflicted also depends on mass, i.e. this value is something like "damage per kg")</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0.6
+			<FONT COLOR="#666666"># deform factor</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>car
+			body deformation amount</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>34
+			<FONT COLOR="#666666"># Wheel turn velocity (angle/s)</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>steering
+			velocity (in angle units/s)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>20
+			<FONT COLOR="#666666"># Max wheel turn angle</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>maximum
+			possible wheel turn angle (full circle is
+			256 degrees)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>20
+			<FONT COLOR="#666666"># Min wheel turn angle</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font><i>obsolete</i></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>40
+			<FONT COLOR="#666666"># min turn angle speed</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font><i>obsolete</i></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>140
+			<FONT COLOR="#666666"># spring stiffness</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>suspension
+			spring stiffness. Too high values can blow up the integrator!</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>8
+			<FONT COLOR="#666666"># spring damping</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>shock
+			absorber strength for springs. Be careful not to choose too high values! It might blow up the physics engine!</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0.1
+			<FONT COLOR="#666666"># suspension spring length</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>maximum
+			length of suspension springs in meters. Sometimes it helps to just use the double value of what you think would be right</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0.1
+			<FONT COLOR="#666666"># vert. anti-roll aid</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>anti-roll
+			aid to avoid flipping over of cars during cornering. This value
+			defines how much to lift up the point where contact patch wheel
+			forces act on the car (in meters). Usually a relatively small value is enough</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0.4
+			<FONT COLOR="#666666"># strength of handbrake</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>strength
+			of the handbrake &quot;turn effect&quot; in the range from 0 to 1</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>---
+			Positions ---</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>START
+			OF POSITIONS SECTION</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>-0.92
+			-0.28 1.36 <FONT COLOR="#666666"># left, upper wheel</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>position
+			of the left front wheel (suspension fully compressed)</FONT></FONT></FONT></P>
+			<P ><FONT COLOR="#333333"><FONT ><font><I>NOTE: Y values (vertical)
+			of front and rear wheels should not differ more than 5 cm from each
+			other to avoid handling issues!</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>1.03
+			-0.28 -1.4 <FONT COLOR="#666666">#  right, lower wheel</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>position
+			of the right rear wheel (suspension fully compressed)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>-1.18
+			0.15 0.4 <FONT COLOR="#666666"># pos of minigun</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>position
+			of the minigun barrel</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0
+			<FONT COLOR="#666666"># angle of minigun</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>pitch
+			angle of the minigun barrels (full circle is 256 degrees). A
+			negative values means pointing down.</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0
+			-0.2 -2 <FONT COLOR="#666666"># mine spawn point</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>obsolete</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>-0.4
+			-0.0 0 <FONT COLOR="#666666">#missile starting point</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>missile
+			spawning position</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>-0.38
+			-0.05 0.15 <FONT COLOR="#666666"># driver position</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>driver
+			mesh position</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>-0.29
+			-0.2 -2.17 <FONT COLOR="#666666"># exhaust position 1</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>position
+			of the (first) exhaust. This position is used to apply exhaust
+			flames. </FONT></FONT></FONT>
+			</P>
+			<P ><FONT COLOR="#333333"><FONT ><font><I>NOTE:
+			different tuning bumpers can also have different exhaust
+			positions. In this case you need to adjust the exhaust positions
+			with special parameters in the tuning section.</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>-0.29
+			-0.2 -2.17 <FONT COLOR="#666666"># exhaust position 2 (if only one
+			exhaust ex1=ex2)</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>position
+			of the second exhaust. This position is used to apply exhaust
+			flames. If no second exhaust is available just keep the position
+			equal to the first exhaust. </FONT></FONT></FONT>
+			</P>
+			<P ><FONT COLOR="#333333"><FONT ><font><I>NOTE:
+			different tuning bumpers can also have different exhaust
+			positions. In this case you need to adjust the exhaust positions
+			with special parameters in the tuning section.</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0.5
+			0.2 1 <FONT COLOR="#666666"># CTF flag</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>position
+			of the HoldTheFlag smiley</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0.0
+			0.4 0 <FONT COLOR="#666666"># PTB bomb</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>position
+			of the attached bomb model</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>-0.3
+			0.42 0.2 <FONT COLOR="#666666"># cockpit cam </FONT></FONT></FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>position
+			of cockpit cam</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0
+			0.35 1.1 <FONT COLOR="#666666"># hood cam</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>position
+			of hood cam</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0
+			0.0 2.1 <FONT COLOR="#666666"># bumper cam</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>position
+			of bumper cam</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0
+			0.6 -0.6 <FONT COLOR="#666666"># car-attached rear view </FONT></FONT></FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>position
+			of car-attached rear view cam</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>-1.3
+			0.2 0.1 <FONT COLOR="#666666"># cam on left car side</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>position
+			of cam attached to left car side</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>-0.9
+			0.6 1.4 <FONT COLOR="#666666">#  cam on right car side</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>position
+			of cam attached to right car side</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0
+			0.42 0 <FONT COLOR="#666666"># Driver cam 1</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font><i>obsolete. Keep 3 values on this line anyway!</i></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>-0.4
+			0.42 0.5 <FONT COLOR="#666666"># Driver cam 2 </FONT></FONT></FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font><i>obsolete. Keep 3 values on this line anyway!</i></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>-1.5
+			0.42 0.1 <FONT COLOR="#666666"># Driver cam 3</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>position
+			of driver camera 3 (looking sidewards to the driver)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>-0.33
+			0.1 0.55 <FONT COLOR="#666666"># steering wheel</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>position
+			of steering wheel</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0
+			0 0 <FONT COLOR="#666666"># car cover plane</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>position
+			of fabric car cover plane visible in career shop (usually not available for custom cars)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>---
+			Tuning ---</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>START
+			OF TUNING SECTION</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>1</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>number
+			of car tuning parts.<br><br><i>NOTE: See below for all details regarding the tuning
+			section</i></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>//
+			Turbokit</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>one
+			line per tuning part: variable comment</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>name=eng_turbo
+			p3dmesh1=turbo_inta turbonoise=100 backfires=1 add_horsepower=110
+			add_torquenm=150 </FONT></FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>one
+			line per tuning part: tuning part identifier and properties. The
+			line can contain a variable number of arguments, separated by
+			spaces and assigning values by the '=' character.<br><br><i>NOTE: See below for all details regarding the tuning
+			section</i></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>---
+			colors ---</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>START
+			OF COLORS SECTION</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>21
+			140 255 <FONT COLOR="#666666"># Default color</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>active
+			car color right after purchasing the car</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>6
+			<FONT COLOR="#666666"># Available colors</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>number
+			of preset car colors in garage screen, at least one is required.
+			If you defined a car that does not support changing the paint's
+			color, this line must be &quot;1&quot;.</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>0
+			22 85 <FONT COLOR="#666666"># nice dark blue</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>list
+			of pre-set colors, one line for each color</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>21
+			140 255 <FONT COLOR="#666666"># bright tuning-like blue</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>193
+			213 228 <FONT COLOR="#666666"># silver</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>212
+			255 191 <FONT COLOR="#666666"># bright pastell green</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>221
+			255 63 <FONT COLOR="#666666"># poison-green</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>255
+			226 42 <FONT COLOR="#666666"># lambo-style yellow</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>---
+			AI ---</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>START
+			OF AI/MULTIPLAYER PRESET TUNING SECTION</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>blank
+			line</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>1
+			<FONT COLOR="#666666"># predefined AI tuning setups</FONT></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>number
+			of preset setups available.<br><br><i>NOTE: after this line, one line for each AI/multiplayer preset follows</i> </FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>name=race-0</FONT></FONT></FONT></P>
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>class=A</FONT></FONT></FONT></P>
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>setup=eng_turbo|fw_default</FONT></FONT></FONT></P>
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>wheel=supersport_s1_17.whl</FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT COLOR="#333333"><FONT ><font>one line with the keywords "name", "class", "setup" and "wheel", seperated by spaces. Each keyword is assigned a value.<br><br>
+			'name' is a unique name identifier for this preset .<br>
+			'class' is the vehicle class (A=best, E=worst).<br>
+			'setup' is a list of tuning items which are applied in this tuning preset. The different tuning name identifiers are seperated by the pipe character '|'.<br>
+                        'wheel' is the name of the .whl file applied to this preset
+			<br><br><i>NOTE: if you created your own custom wheel, specify it by the string "wheel=[foldername].[wheelname].whl". A car folder's name and thus this line might be changed from the CarManager during car installation on another machine.</i>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=33% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><BR>
+			</P>
+		</TD>
+		<TD WIDTH=67% BGCOLOR="#ffffff">
+			<P ><FONT COLOR="#333333"><FONT ><font><I>end
+			of file</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="font-weight: medium; text-decoration: none"><BR>
+</P>
+<P STYLE="font-weight: medium; text-decoration: none"><FONT COLOR="#333333"><FONT ><font><SPAN>
+This documentation omits the so-called &ldquo;VISIBILITIES&rdquo; section of the .cca which is useful for performance tweaking. It defines flags to indicate which meshes
+will be visible from which viewing direction to save rendering batches.<br>
+As this feature is rather complicated and not totally essential, we will skip it in this document. In your .cca file, just end the file after the AI preset kits section.</SPAN></FONT></FONT></FONT></P>
+<br><br>
+<P STYLE="font-weight: medium; text-decoration: none">
+<FONT COLOR="#333333"><FONT ><font><FONT COLOR="#333333"><FONT ><FONT SIZE=3><B>Tuning section</B></FONT></FONT></FONT><BR>Each car can have a variable number of tuning parts. A
+tuning part can either change visual, physical or both aspects of a
+car. The total number of tuning parts per car must be specified and
+each tuning part must be given a unique identifier string. <BR><BR><I><font><img src="images/mark.gif" align=left>
+
+Each tuning part in the carinfo.cca must have a corresponding shop
+part in the car's shop.lst (see <a href="3_cars_shopparts.html">Shop and tuning parts</a>) with the same identifier name!
+Otherwise car tuning parts won't have any effect. (example: you
+define one tuning part for your car, which is a tuning front bumper
+part named &quot;fbmp1&quot;. The corresponding shop part list must
+also then define a shop part for this bumper part and also name it
+&quot;fbmp1&quot;) </FONT></I><BR><BR><br>This list defines all possible
+parameters that can be part of a tuning. Each of these elements can
+be combined.</SPAN></FONT></FONT></FONT></P>
+
+<TABLE WIDTH=600 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=53*>
+	<COL WIDTH=203*>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>add_carclass=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>upgrades
+			the car's car classification. This can &quot;0.5&quot;, &quot;1&quot;,
+			&quot;1.5&quot;, &quot;2&quot;. An upgrade of &quot;1&quot; is
+			equal to increase the classification by one classification letter,
+			like from a &quot;B&quot; to an &quot;A&quot; car.</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2 WIDTH=100% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal"><FONT ><font><B>PHYSICAL
+			TUNING</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>add_massadd=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			car mass. +/- value in kg is added to current mass</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>add_horsepower=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			horse power (only statistical value). +/- value is added to the
+			current horse power</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>add_topspeed=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			top speed. +/- value in m/s is added to the current top speed</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>add_torquenm=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			acceleration torque. +/- value in Nm is added to the current
+			torque value</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>brake=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			brake strength. Value is multiplied with current brake value</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>diffratio=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			the differential ratio. Value is multiplied with the current ratio</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>energyloss=</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			damage inflicted to own car. Value is multiplied with current
+			energy loss value</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>crashpower=</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			damage inflicted to other cars. Value is multiplied with current
+			crash power</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>deform=</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			car deformation strength. Value is multiplied with the current
+			deformation value</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>springstiffness=</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			suspension spring stiffness. Value is multiplied with the current
+			stiffness value</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>springrange=</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			suspension spring length. Value is multiplied with the current
+			length value</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>springdamping=</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			suspension spring damping. Value is multiplied with the current
+			damping value</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>add_antirollheight=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			anti-roll aid. +/- value in meters is added to current anti-roll
+			aid height</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>add_trackfront=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			the front wheel track. +/- value in meters is used to move each
+			front wheel away from the center</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>add_trackrear=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			the rear wheel track. +/- value in meters is used to move each
+			rear wheel away from the center</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>add_wheelposyfront=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			the vertical position of the front wheels (with fully compressed
+			suspension). +/- value in meters is added to the current vertical
+			position</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>add_wheelposyrear=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			the vertical position of the rear wheels (with fully compressed
+			suspension). +/- value in meters is added to the current vertical
+			position</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2 WIDTH=100% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal"><FONT ><font><B>DECALS/VINYLS
+			&amp; EFFECT PAINT</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>decaltype=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>value
+			has to be &ldquo;decal&rdquo; (a maximum of 4 decals is possible)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>decal1=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>decal
+			texture file 1</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>decal2=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>decal
+			texture file 2</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>decal3=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>decal
+			texture file 3</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>decal4=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>decal
+			texture file 4</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>decalcolor=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>RGB
+			hex color value to be multiplied with the decal textures (without
+			'#' or '0x')</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>tex1toapplydecal1=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>name
+			of first car texture where to apply the decal texture 1</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>tex2toapplydecal2=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>name
+			of second car texture where to apply the decal texture 2</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>tex3toapplydecal3=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>name
+			of third car texture where to apply the decal texture 3</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>tex4toapplydecal4=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>name
+			of fourth car texture where to apply the decal texture 4</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2 WIDTH=100% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal"><FONT ><font><B>OTHER</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>engsound=</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			the selected engine sound set (see above for explanations)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>turbonoise=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			the volume of the turbo blow off valve sound in the range from
+			0-1. The default volume is defined per engine in its engine sound
+			set file</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>gearboxnoise=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			the volume of the rally-style gear box noise in the range from
+			0-1. The default volume is defined per engine in its engine sound
+			set file</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>backfires=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			the intensity and amount of exhaust backfires in the range from
+			0-1. The default value is defined per engine in its engine sound
+			set file</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>ignitionsound=</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>changes
+			the ignition sound of the engine. The default sound is defined per
+			engine in its engine sound set file</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>add_missilecapacity=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>add
+			a certain number of missiles to the car</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>shift_exhaust1x=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>shifting
+			of first exhaust in x position</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>shift_exhaust1y=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>shifting
+			of first exhaust in y position</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>shift_exhaust1z=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>shifting
+			of first exhaust in z position</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>shift_exhaust2x=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>shifting
+			of second exhaust in x position</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>shift_exhaust2y=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>shifting
+			of second exhaust in y position</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>shift_exhaust2z=
+			</FONT></FONT>
+			</P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>shifting
+			of second exhaust in z position</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD COLSPAN=2 WIDTH=100% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal"><FONT ><font><B>ATTACH/DETACH
+			MESHES WITH A TUNING</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>p3dmesh1=<BR>...<BR>p3dmesh16=</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>these
+			commands allow to attach up to 16 meshes to the car. Meshes, that
+			are not part of a tuning, must be defined in the &quot;default
+			mesh list&quot; (see top of carinfo.cca)</FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=21% BGCOLOR="#e0e0e0">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>removemesh1=<BR>...<BR>removemesh16=</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=79% BGCOLOR="#ffffff">
+			<P STYLE="font-style: normal; font-weight: medium"><FONT ><font>these
+			commands allow to remove up to 16 meshes from the car. To remove a
+			mesh, it must have been added to the &quot;default mesh list&quot;
+			before (see top of carinfo.cca) (a typical use for the
+			remove-function would for example be to remove a license plate on
+			a tuned car rear)</FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+
+
+<script language="JavaScript">
+  <!--
+      ClosePage();
+   //-->
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,405 @@
+<html>
+
+<head>
+  <title>Crashday Software Development Kit - Documentation</title>
+  <link rel="StyleSheet" href="help.css" title="stylesheet" type="text/css">
+  <script language="JavaScript" src="menu.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<script language="JavaScript">
+  <!--
+      OpenPage( "6. Technical Reference", "Textures and shaders" );
+   //-->
+</script>
+
+   <p>
+<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>Crashday's
+textures are usually consisting of two files. The bitmap file (.dds or .tga) and the material shader file (.tex). If no shader file is
+available, a diffuse non-alpha default material will be used. However, to give any of your textures the right look, make sure you create .tex-files for each new texture. Textures and their related .tex-files have to have the same filename and must exist in the same directory. </SPAN></FONT></FONT></FONT>
+</P>
+<p >
+<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>Except
+for cars, all Crashday textures are and should be located in [crashday]\textures.</SPAN></FONT></FONT></FONT></P>
+<p >
+<BR>
+</P>
+<p >
+<FONT COLOR="#333333"><img src="images/mark.gif" align=left><FONT ><FONT ><I><SPAN>Due
+to graphics card limitations, Crashday (like any other realtime
+application) only supports dimensions of 16x16, 32x128, 1024x1024,
+etc. (potence with basis 2)</SPAN></I></FONT></FONT></FONT></P>
+<p ><FONT COLOR="#333333"><img src="images/mark.gif" align=left><FONT ><FONT ><I><SPAN>The maximum valid texture resolution is 2048x2048. Beware that not all graphics cards might support these high
+resolutions. Moreover this high resolution occupies 16MB of memory in the uncompressed version</SPAN></I></FONT></FONT></FONT></P>
+<p >
+<BR>
+</P>
+<p  >
+<FONT COLOR="#333333"><FONT ><FONT SIZE=3><B><SPAN>.tga
+textures in Crashday</SPAN></B></FONT></FONT></FONT></P>
+<p >
+<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>Crashday
+primarily uses the .tga-format for car textures. However, you can of
+course use it for any other purpose, too. As it is a
+non-compressed format, it uses a lot of video video memory. If possible, always use compressed .dds textures instead (see below).<br><br>Find some .tga particularities here:</SPAN></FONT></FONT></FONT></P>
+<UL>
+	<LI><p >
+	<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>mipmaps
+	for .tga-files are created from Crashday at runtime</SPAN></FONT></FONT></FONT></P>
+	<LI><p >
+	<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>.tga supports an alpha channel. Be sure to have it turned on when
+	saving .tga with your graphics application</SPAN></FONT></FONT></FONT></P>
+	<LI><p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+	<FONT COLOR="#4c4c4c"><FONT ><FONT  ><SPAN>it
+	needs no related medium and lowres version in the
+	&ldquo;medium_detail_textures&rdquo; and &rdquo;low_detail_textures&rdquo;
+	folders as there are created from Crashday at runtime</SPAN></FONT></FONT></FONT></P>
+	<LI><p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+	<FONT COLOR="#4c4c4c"><FONT ><FONT  ><SPAN>be
+	sure to use .tga format when creating car textures as .dds isn't
+	capable of any in-game color changing</SPAN></FONT></FONT></FONT></P>
+</UL>
+<p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<p  >
+<FONT COLOR="#333333"><FONT ><FONT SIZE=3><B><SPAN>.dds
+textures in Crashday</SPAN></B></FONT></FONT></FONT></P>
+<p >
+
+<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>In
+Crashday the .dds format is usually used for texturing objects like
+track pieces.  As .dds is a compressed texture format, it offers a
+very small file size but has some limitations:</SPAN></FONT></FONT></FONT></P>
+<UL>
+	<LI><p >
+	       <font color="#333333"><font ><font >it has to contain its own precalculated mipmaps, so be sure they are generated
+	when exporting to .dds with your graphics application</FONT></FONT></FONT>
+	</P>
+	<LI><p >
+	<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>.dds supports an alpha channel. Be sure to have it turned on when
+	saving .dds with your graphics application</SPAN></FONT></FONT></FONT></P>
+	<LI><p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+	<FONT COLOR="#4c4c4c"><FONT ><FONT  ><SPAN>it
+	needs a related medium (half-size) and lowres (quarter-size) version in the subfolders
+	&ldquo;medium_detail_textures&rdquo; and &rdquo;low_detail_textures&rdquo;
+	</SPAN></FONT></FONT></FONT></P>
+	<LI><p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+	<FONT COLOR="#4c4c4c"><FONT ><FONT  ><SPAN>Crashday tries to desaturate every texture in-game, as the gamma ramp screen filter increases color intensity too much. As
+	post-processing isn't supported by compressed .dds textures, you need to do it manually with your
+	graphics application. Best way to do this is simply apply a 50% grey-scale layer on top of your texture.</SPAN></FONT></FONT></FONT></P>
+</UL>
+<SPAN ID="Rahmen34" DIR="LTR" >
+	       	<P STYLE="margin-top: 0.21cm"><IMG SRC="images/SDK_doc_reference_technical_html_596660f4.jpg" NAME="Grafik12" BORDER=0><BR CLEAR=LEFT><FONT COLOR="#333333"><FONT ><FONT ><I>Original
+	       	&ldquo;floor1&rdquo; texture and desaturated version</I></FONT></FONT></FONT></P>
+	       </SPAN><p >
+<BR>
+</P>
+<p  STYLE="background: transparent; font-style: normal; text-decoration: none">
+<FONT COLOR="#4c4c4c"><FONT ><FONT SIZE=3><B><SPAN>Explanation
+of Crashday's .tex-shading files</SPAN></B></FONT></FONT></FONT></P>
+<p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#4c4c4c"><FONT ><FONT  ><SPAN>A
+texture shader info file defines the way how a certain texture is
+being shaded in Crashday (i.e. lighting and rendering). Also it
+defines the physical material a texture is of. The file is an ASCII
+.tex-file associated to a texture with the same name and the
+extension .dds/.tga in one of the texture folders.</SPAN></FONT></FONT></FONT></P>
+<p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#4c4c4c"><FONT ><FONT  ><SPAN>The
+following list explains the shading file in detail:</SPAN></FONT></FONT></FONT></P>
+<TABLE WIDTH=601 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=256>
+	<COL WIDTH=335>
+	<TR>
+		<td WIDTH=256 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I><B>Example
+			file: test.tex</B></I></FONT></FONT></FONT></P>
+		</td>
+		<td WIDTH=335 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I><B>Explanation</B></I></FONT></FONT></FONT></P>
+		</td>
+	</TR>
+	<TR>
+		<TD WIDTH=256 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>has_alpha </I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=335 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333">&ldquo;<FONT ><FONT >has_alpha&rdquo;
+			if you want to render a texture with transparency, otherwise leave line blank</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=256 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>disable_mipmapping</I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=335 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333">&ldquo;<FONT ><FONT >disable_mipmapping&rdquo;
+			if game should not use mipmapping for this texture (especially for
+			cars), otherwise leave line blank. If you provide a .dds file, make you you didn't create it with mipmaps if you use this parameter</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=256 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>default
+			<FONT COLOR="#666666"># ingame material type</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=335 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >material
+			type defines the physical material a texture is of, either
+			&ldquo;default&rdquo; (asphalt, concrete) or &ldquo;grass&rdquo;
+			(loose floor, dirt roads)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=256 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><b>[shader type]</I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=335 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >type of shader used, see below for list of existing shaders</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD colspan=2 WIDTH=256 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>variable-length list of shader parameters, depending on shader type</I></FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+<p >
+<BR>
+</P>
+<P><FONT COLOR="#333333"><FONT ><FONT  >Crashday
+only works with a set of predefined shaders, which can partly be
+modified by the values below the shader type in the shader file.</FONT></FONT></FONT></P>
+<p  STYLE="background: transparent; font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#333333"><FONT ><FONT  ><SPAN>The
+supported types with their parameters are:</SPAN></FONT></FONT></FONT></P>
+<TABLE WIDTH=601 BORDER=1 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=265>
+	<COL WIDTH=326>
+	<TR>
+		<td WIDTH=265 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I><B>default</B></I></FONT></FONT></FONT></P>
+		</td>
+		<td WIDTH=326 BGCOLOR="#b3b3b3">
+			<p ><FONT COLOR="#333333"><FONT ><FONT >simple
+			diffuse lighting (default shading type)</FONT></FONT></FONT></P>
+		</td>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>default
+			<FONT COLOR="#666666"># shader type</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >just
+			that line, no additional parameters</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I><B>specularvertex</B></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT >diffuse
+			lighting with specular reflection map</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>specularvertex<FONT COLOR="#666666">
+			# shader type</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >specular
+			identifier</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>ultra
+			 <FONT COLOR="#666666"># minimum quality to activate shader</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >if in-game specified &ldquo;Surface Reflection Quality&rdquo; is less than the minimum level specified here, the texture is rendered diffuse, not specular. Valid settings are "ultra", "high", "medium" or "low"</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>_self_
+			<FONT COLOR="#666666"># specular map</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >either
+			&ldquo;_self_&rdquo; to use own alpha channel as specular map or
+			specify a different file to use its alpha channel</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>0.7
+			<FONT COLOR="#666666"># overall strength</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >specular
+			overall strength</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>2
+			<FONT COLOR="#666666"># power exponent</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >specular
+			power exponent</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>1
+			<FONT COLOR="#666666"># remaining diffuse sun light</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >if you have bright light spots from the specular reflection you might not want to have any more sunlight
+			spots on the diffuse coat. Use this parameter from 0-1 to adjust the remaining "diffuse brightness" if specular spot is bright (i.e. for metal)</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I><B>diffuseenvmap</B></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT >diffuse
+			lighting with environment mapping</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>diffuseenvmap<FONT COLOR="#666666">
+			# shader type</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >specular
+			identifier</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>0.3
+			<FONT COLOR="#666666"># minimum reflection</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >minimum
+			reflection strength</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>0.7
+			<FONT COLOR="#666666"># maximum reflection</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >maximum
+			reflection strength</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>3
+			<FONT COLOR="#666666"># fresnel exponent</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >fresnel
+			exponent</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I><B>chrome</B></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT >chrome
+			shader</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>chrome<FONT COLOR="#666666">
+			# shader type</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >specular
+			identifier</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>1
+			<FONT COLOR="#666666"># amount of chrome</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >amount
+			of chrome blended against diffuse</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I><B>additiveblend</B></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT >additively
+			blended textures</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>additiveblend
+			<FONT COLOR="#666666"># shader type</FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >just
+			that line, no additional parameters</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I><B>use_shaderparams_from</B></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#b3b3b3">
+			<P><FONT COLOR="#333333"><FONT ><FONT >reference to other .tex file to pick shader specified there</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>use_shaderparams_from # shader type
+			<FONT COLOR="#666666"></FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >this line identifies the use of a reference</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=265 BGCOLOR="#e7e7e7">
+			<P><FONT COLOR="#333333"><FONT ><FONT ><I>[filename].tex
+			<FONT COLOR="#666666"></FONT></I></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=326 BGCOLOR="#ffffff">
+			<P><FONT COLOR="#333333"><FONT ><FONT >tex file we copy the shader settings from</FONT></FONT></FONT></P>
+		</TD>
+	</TR>
+</TABLE>
+
+
+<script language="JavaScript">
+  <!--
+      ClosePage();
+   //-->
+</script>
+
+
+</body>
+
+</html>
