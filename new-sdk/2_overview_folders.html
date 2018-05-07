@@ -1,0 +1,328 @@
+<html>
+<head>
+  <title>Crashday Software Development Kit - Documentation</title>
+  <link rel="StyleSheet" href="help.css" title="stylesheet" type="text/css">
+  <script language="JavaScript" src="menu.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <script language="JavaScript">
+    <!--
+        OpenPage( "2. Overview", "Crashday Folders" );
+     //-->
+  </script>
+
+  After the Redline update all crashday files and mods are stored inside <i>.cpk</i> files. These files are just zip archives and contain all of the game's content.
+  If you go to the <i>crashday/data</i> folder you will find all of the game's packs.
+
+  <br>
+  <br>
+  <p><img src="images/mark.gif" align=left><i>
+    Do not edit any game's .cpk files in any way. Game's anticheat will not let you in the game if it finds any differences from the originals. If you want to change any content, use mods to do so.
+  </i></p>
+
+  <p><img src="images/mark.gif" align=left><i>
+    .cdx files are encrypted packages and can not be opened.
+  </i></p>
+
+  <br>
+  Every archive has content of it's own type, so it would be easier to find needed content.
+
+  <table width=595 border=1 bordercolor="#e7e7e7" cellpadding=5 cellspacing=0>
+		<tr valign=top>
+			<td width=153 bgcolor="#e0e0e0">
+				<p>data000.cpk</p>
+			</td>
+			<td width=420>
+				<p>Common files</p>
+			</td>
+		</tr>
+
+    <tr valign=top>
+			<td width=153 bgcolor="#e0e0e0">
+				<p>data001.cpk</p>
+			</td>
+			<td width=420>
+				<p>Music files</p>
+			</td>
+		</tr>
+
+    <tr valign=top>
+			<td width=153 bgcolor="#e0e0e0">
+				<p>data002.cpk</p>
+			</td>
+			<td width=420>
+				<p>Ambience files</p>
+			</td>
+		</tr>
+
+    <tr valign=top>
+			<td width=153 bgcolor="#e0e0e0">
+				<p>data003.cpk</p>
+			</td>
+			<td width=420>
+				<p>Car files</p>
+			</td>
+		</tr>
+
+    <tr valign=top>
+			<td width=153 bgcolor="#e0e0e0">
+				<p>data004.cpk</p>
+			</td>
+			<td width=420>
+				<p>Vegetation files</p>
+			</td>
+		</tr>
+
+    <tr valign=top>
+			<td width=153 bgcolor="#e0e0e0">
+				<p>data005.cpk</p>
+			</td>
+			<td width=420>
+				<p>Dynamics files</p>
+			</td>
+		</tr>
+
+    <tr valign=top>
+			<td width=153 bgcolor="#e0e0e0">
+				<p>data006.cpk</p>
+			</td>
+			<td width=420>
+				<p>Tile files</p>
+			</td>
+		</tr>
+
+    <tr valign=top>
+			<td width=153 bgcolor="#e0e0e0">
+				<p>data007a.cpk</p>
+			</td>
+			<td width=420>
+				<p>English localization files</p>
+			</td>
+		</tr>
+
+    <tr valign=top>
+			<td width=153 bgcolor="#e0e0e0">
+				<p>data007b.cpk</p>
+			</td>
+			<td width=420>
+				<p>German localization files</p>
+			</td>
+		</tr>
+
+    <tr valign=top>
+			<td width=153 bgcolor="#e0e0e0">
+				<p>data007c.cpk</p>
+			</td>
+			<td width=420>
+				<p>Italian localization files</p>
+			</td>
+		</tr>
+
+    <tr valign=top>
+			<td width=153 bgcolor="#e0e0e0">
+				<p>data007d.cpk</p>
+			</td>
+			<td width=420>
+				<p>Russian localization files</p>
+			</td>
+		</tr>
+  </table>
+  <br>
+
+  <p><img src="images/mark.gif" align=left><i>
+    Only one localization files should be present, containing your currently selected Crashday localization.
+  </i></p>
+  <br>
+
+  <span >
+    <p><img src="images/overview/folders_overview.png" name="folder1" border=0><i>Crashday directory tree after unpacking all of the .cpk files</i></p>
+  </span>
+  <br>
+
+  <p><img src="images/mark.gif" align=left><i>
+    Every <b>cars</b> folder contains a subfolder for every car. They are not present on the image to save screen space.
+  </i></p>
+  <br>
+
+  This is a short overview on all the modding-relevant folders.
+  <table width=595 border=1 bordercolor="#e7e7e7" cellpadding=5 cellspacing=0>
+    <tr valign=top>
+      <td width=153 bgcolor="#e0e0e0">
+        <p>ambience</p>
+      </td>
+      <td width=420>
+        <p>Contains ambience definition files. These are used to change weather and environment colors.</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e0e0e0">
+        <p>career</p>
+      </td>
+      <td width=420>
+        <p>Contains all career missions definition files as well as <i>ladder.lst</i> containing enemies rankings</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e0e0e0">
+        <p>cars</p>
+      </td>
+      <td width=420>
+        <p>Contains a subfolder for every car, contating different definition files</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e0e0e0">
+        <p>dbs</p>
+      </td>
+      <td width=420>
+        <p>Contains dbs files which contain different game parameters</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e0e0e0">
+        <p>dynamics</p>
+      </td>
+      <td width=420>
+        <p>Contains  dynamic objects definitions</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e0e0e0">
+        <p>editor</p>
+      </td>
+      <td width=420>
+        <p>Contains editor category definitions</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e0e0e0">
+        <p>fonts</p>
+      </td>
+      <td width=420>
+        <p>Contains all the fonts, fonts sizes and conversion tables</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e0e0e0">
+        <p>loc</p>
+      </td>
+      <td width=420>
+        <p>Contains localizations and credits file</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e0e0e0">
+        <p>models</p>
+      </td>
+      <td width=420>
+        <p>Contains all the models</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e6e6ff">
+        <p>models/cars</p>
+      </td>
+      <td width=420>
+        <p>Every subfolder contains a car's model</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e0e0e0">
+        <p>music</p>
+      </td>
+      <td width=420>
+        <p>Contains music and in-game soundtracks</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e0e0e0">
+        <p>particles</p>
+      </td>
+      <td width=420>
+        <p>Contains particle definiiton files</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e0e0e0">
+        <p>shop</p>
+      </td>
+      <td width=420>
+        <p>Contains shop definitions files</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e6e6ff">
+        <p>shop/cars</p>
+      </td>
+      <td width=420>
+        <p>Contains the weapons shop list. Every subfolder has it's corresponding car's shop list.</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e0e0e0">
+        <p>sounds</p>
+      </td>
+      <td width=420>
+        <p>Contains all the sounds</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e0e0e0">
+        <p>textures</p>
+      </td>
+      <td width=420>
+        <p>Contains all the textures</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e0e0e0">
+        <p>tiles</p>
+      </td>
+      <td width=420>
+        <p>Contains definition files for track pieces (tiles) containing information such as tile dimensions, vegetation, AI helpers and links to the reference 3d models</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e0e0e0">
+        <p>vegetat</p>
+      </td>
+      <td width=420>
+        <p>Contains vegetation definition files</p>
+      </td>
+    </tr>
+
+    <tr valign=top>
+      <td width=153 bgcolor="#e0e0e0">
+        <p>wheels</p>
+      </td>
+      <td width=420>
+        <p>Contains wheel definition files</p>
+      </td>
+    </tr>
+  </table>
+
+  <script language="JavaScript">
+    <!--
+        ClosePage();
+     //-->
+  </script>
+</body>
+</html>

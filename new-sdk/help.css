@@ -2,10 +2,12 @@ body {
   font-family: Tohoma, Arial, Helvetica, sans-serif;
   background-color: #ffffff;
   text-align: left;
-  margin:0 }
+  margin:0
+}
 
 img {
-  border-width: 0; }
+  border-width: 0;
+}
 
 table {
   font-size: 12px;
@@ -88,7 +90,7 @@ td.content {
   background-image:url(background.gif)
 }
 
-p font {
+td p {
   text-align:left;
   border-width:1px;
   font-size: 14px;
@@ -98,9 +100,9 @@ p font {
 }
 
 td.leftrow {
-border-width:1px;
-border-style:solid;
-border-color:#777777;
+  border-width:1px;
+  border-style:solid;
+  border-color:#777777;
   font-size: 14px;
   font-weight: bold;
   line-height: 22px;
@@ -111,12 +113,12 @@ border-color:#777777;
 }
 
 td.rightrow {
-border-width:1px;
-border-style:solid;
-border-color:#777777;
+  border-width:1px;
+  border-style:solid;
+  border-color:#777777;
   font-size:14px;
   font-weight: normal;
   line-height: 22px;
   margin-left:5px;
   color: #444444;
-  }
+}
