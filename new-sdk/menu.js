@@ -25,6 +25,9 @@ function OpenPage( head, title )
       	MenuStr += '  &nbsp;&nbsp;<a href="2_overview_tools.html">&gt; Tools</a><br>';
       	MenuStr += '  &nbsp;&nbsp;<a href="2_overview_generalhints.html">&gt; General hints</a><br>';
 
+      	MenuStr += '  <b class="caption">3. Creating Cars</b><br><br>';
+      	MenuStr += '  &nbsp;&nbsp;<a href="3_cars_realization.html">&gt;  Technical realization of cars</a><br>';
+
       	MenuStr += '  <br><br><br>&nbsp;</td>';
         MenuStr += '  <td width=60 height=600>&nbsp;</td>';
         MenuStr += '  <td valign=top class="content" height=600><br><br>';
