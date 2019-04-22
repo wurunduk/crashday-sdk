@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <title>Crashday: Redline Edition SDK - Documentation</title>
+  <link rel="StyleSheet" href="help.css" title="stylesheet" type="text/css">
+  <script language="JavaScript" src="menu.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<script language="JavaScript">
+  <!--
+      OpenPage( "5. Tools Reference", "Blender Export (3D model tools)" );
+   //-->
+</script>
+
+
+<P  ><FONT COLOR="#333333"><FONT ><font>Location: https://github.com/wurunduk/blender-p3d-import-export</FONT></FONT></FONT></P>
+<P  ><BR>
+</P>
+
+<p><BR CLEAR=LEFT><FONT COLOR="#333333"><FONT ><font>This is a Blender plugin specifically 
+made to export models into Crashday's .p3d format, pretty much making the makep3d tool obselete.</FONT></FONT></FONT>
+</P>
+
+
+<script language="JavaScript">
+  <!--
+      ClosePage();
+   //-->
+</script>
+
+
+</body>
+
+</html>
