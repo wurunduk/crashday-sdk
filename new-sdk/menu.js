@@ -27,6 +27,9 @@ function OpenPage( head, title )
 
       	MenuStr += '  <br><b class="caption">3. Modding basics</b><br><br>';
       	MenuStr += '  &nbsp;&nbsp;<a href="3_started_modding.html">&gt;  Getting started with modding</a><br>';
+	
+      	MenuStr += '  <br><b class="caption">5. Tools Reference</b><br><br>';
+      	MenuStr += '  &nbsp;&nbsp;<a href="3_started_modding.html">&gt;  Blender export plugin</a><br>';
 
       	MenuStr += '  <br><br><br>&nbsp;</td>';
         MenuStr += '  <td width=60 height=600>&nbsp;</td>';
