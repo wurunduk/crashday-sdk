@@ -25,8 +25,9 @@ function OpenPage( head, title )
       	MenuStr += '  &nbsp;&nbsp;<a href="2_overview_tools.html">&gt; Tools</a><br>';
       	MenuStr += '  &nbsp;&nbsp;<a href="2_overview_generalhints.html">&gt; General hints</a><br>';
 
-      	MenuStr += '  <br><b class="caption">3. Modding basics</b><br><br>';
-      	MenuStr += '  &nbsp;&nbsp;<a href="3_started_modding.html">&gt;  Getting started with modding</a><br>';
+      	MenuStr += '  <br><b class="caption">3. Modding Tutorials</b><br><br>';
+      	MenuStr += '  &nbsp;&nbsp;<a href="3_getting_started_modding.html">&gt;  Getting started</a><br>';
+      	MenuStr += '  &nbsp;&nbsp;<a href="3_ambience_modding_basics.html">&gt;  Ambience modding - Part 1: Basics</a><br>';
 	
       	MenuStr += '  <br><b class="caption">5. Tools Reference</b><br><br>';
       	MenuStr += '  &nbsp;&nbsp;<a href="5_tools_blender_export">&gt;  Blender export plugin</a><br>';
