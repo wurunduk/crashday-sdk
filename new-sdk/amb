@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <title>Crashday Software Development Kit - Documentation</title>
+  <link rel="StyleSheet" href="help.css" title="stylesheet" type="text/css">
+  <script language="JavaScript" src="menu.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<script language="JavaScript">
+  <!--
+      OpenPage( "3. Modding Tutorials", "Ambience modding - Part 1: Basics" );
+   //-->
+</script>
+
+
+<img src="images/SDK_doc_FULL_html_m6ab16549.png">
+
+<P  STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#333333"><FONT ><font><SPAN>This
+section is currently under construction and is NOT finalized.</SPAN></FONT></FONT></FONT></P>
+<P  STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+
+<script language="JavaScript">
+  <!--
+      ClosePage();
+   //-->
+</script>
+
+
+</body>
+
+</html>
