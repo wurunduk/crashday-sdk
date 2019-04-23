@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <title>Crashday: Redline Edition SDK - Documentation</title>
+  <link rel="StyleSheet" href="help.css" title="stylesheet" type="text/css">
+  <script language="JavaScript" src="menu.js" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+<script language="JavaScript">
+  <!--
+      OpenPage( "4. Creating cars", "Technical realization of cars" );
+   //-->
+</script>
+
+
+<img src="technical_incu.png">
+
+<P  STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#333333"><FONT ><font><SPAN>This
+section explains the inner workings and creation of vehicles in Crashday.</SPAN></FONT></FONT></FONT></P>
+<P  STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+<P  STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#333333"><FONT ><font><SPAN>Every car needs it's folder in 4 essential places:
+cars, models, shop, and textures folders. If a one of these is missing, then they won't work ingame, or crash the game.
+The one in the 'cars' folder is the heart of your car, it contains the main file, where the performance and basic things are set.
+The one in the 'models' and 'textures' folder contains the model and textures respectively.
+The one in the 'shop' folder makes the car and it's tuning parts appear in the game.
+</SPAN></FONT></FONT></FONT></P>
+<P  STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#333333"><FONT ><font><SPAN>You can download other, or share your own cars using the Steam Workshop.</SPAN></FONT></FONT></FONT></P>
+<P  STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#333333"><FONT ><font><SPAN>If
+created a car correctly, it should appear in the game's quick play or career mode.</SPAN></FONT></FONT></FONT></P>
+<P  STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<BR>
+</P>
+
+
+<script language="JavaScript">
+  <!--
+      ClosePage();
+   //-->
+</script>
+
+
+</body>
+
+</html>
