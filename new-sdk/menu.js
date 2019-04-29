@@ -28,6 +28,7 @@ function OpenPage( head, title )
       	MenuStr += '  <br><b class="caption">3. Modding Tutorials</b><br><br>';
       	MenuStr += '  &nbsp;&nbsp;<a href="3_getting_started_modding.html">&gt;  Getting started</a><br>';
       	MenuStr += '  &nbsp;&nbsp;<a href="3_ambience_modding_basics.html">&gt;  Ambience modding - Part 1</a><br>';
+	MenuStr += '  &nbsp;&nbsp;<a href="3_car_lights.html">&gt;  Making Car Lights</a><br>';
 	
 	MenuStr += '  <br><b class="caption">4. Creating a Car</b><br><br>';
       	MenuStr += '  &nbsp;&nbsp;<a href="4_cars_realization.html">&gt;  Technical realization of cars</a><br>';
