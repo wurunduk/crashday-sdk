@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Crashday Software Development Kit - Documentation</title>
+  <link rel="StyleSheet" href="help.css" title="stylesheet" type="text/css">
+  <script language="JavaScript" src="menu.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<script language="JavaScript">
+	  <!--
+	      OpenPage( "3. Modding Tutorials", "Making Car Lights" );
+	   //-->
+	</script>
+
+
+<img src="images/therewillbeimagehereok.png">
+<P  STYLE="font-style: normal; font-weight: medium; text-decoration: none">
+<FONT COLOR="#333333"><FONT ><font><SPAN>This page explains how to add overlay meshes and light flares to your car. </br></br>
+
+Firstly, what are overlay meshes and light flares?</br></br>
+Light overlay meshes are meshes that are hidden by default, and only appear when needed. There are 2 kinds of overlay meshes: Headlights and Brakelights.</br></br>
+Headlight meshes serve as the front and rear lights of the car, and will only appear in dark ambiences. These have to be named headl_*something* in your model to work.</br></br>
+Brakelight meshes act as the rear brakelights for your car, and appear in all ambiences, when you apply the brake on your car. These have to be names brakel_*something* in your model</br></br>
+The easiest way of making these is to simply make a copy of the front and rear lights of your car, but can be expanded further, shown by this example here:</br></br>
+<img src="images/delorean_lights.png"></br></br>
+
+Light Flares: W.I.P.
+</SPAN></FONT></FONT></FONT></P>
+
+	<script language="JavaScript">
+	  <!--
+	      ClosePage();
+	   //-->
+	</script>
+</body>
+</html>
